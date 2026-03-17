@@ -5,45 +5,19 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronRight, Lock } from "lucide-react";
 
-/** 
- * Sippe wordmark
- * Uses the dotless 'ı' to perfectly match the custom logo where the chat bubble IS the dot. 
- */
+import Image from "next/image";
+
 function SippeLogo() {
   return (
-    <div
-      className="flex items-baseline select-none"
-      style={{
-        fontFamily: "var(--font-jakarta), sans-serif",
-        fontWeight: 800,
-        fontSize: "28px",
-        letterSpacing: "-0.04em",
-        color: "#09090b",
-      }}
-    >
-      <span>S</span>
-      <span className="relative inline-flex flex-col items-center">
-        {/* Chat bubble SVG — floats exactly where the dot would be */}
-        <svg
-          className="absolute"
-          style={{ bottom: "75%", width: "22px", height: "18px", marginLeft: "1px" }}
-          viewBox="0 0 24 20"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          {/* Corpo do balão (elipse) */}
-          <ellipse cx="12" cy="9" rx="10" ry="7" fill="#09090b" />
-          {/* Rabinho do balão (apontando para baixo, saindo da direita pra esquerda levemente) */}
-          <path d="M11 15.5L8.5 19L14 14.5Z" fill="#09090b" />
-          {/* Três pontinhos do chat - centralizados */}
-          <circle cx="7" cy="9" r="1.5" fill="white" />
-          <circle cx="12" cy="9" r="1.5" fill="white" />
-          <circle cx="17" cy="9" r="1.5" fill="white" />
-        </svg>
-        {/* Dotless i */}
-        <span>ı</span>
-      </span>
-      <span>ppe</span>
+    <div className="flex items-center select-none pl-1">
+      <Image
+        src="/logo-sippe.png"
+        alt="Sippe Logo"
+        width={130}
+        height={40}
+        className="w-auto h-9 sm:h-10 object-contain"
+        priority
+      />
     </div>
   );
 }
@@ -98,12 +72,6 @@ export default function Navbar() {
 
           {/* Desktop CTAs */}
           <div className="hidden md:flex items-center gap-2">
-            <Link href="/login">
-              <Button variant="ghost" className="rounded-full font-semibold text-muted-foreground hover:text-foreground hover:bg-black/5">
-                <Lock className="w-4 h-4 mr-2 opacity-50" />
-                Entrar
-              </Button>
-            </Link>
             <Link href="/signup">
               <Button
                 className="rounded-full shadow-md shadow-primary/20 bg-primary font-bold px-6 text-primary-foreground hover:bg-primary/90 transition-all hover:scale-105 active:scale-95 group"
@@ -141,11 +109,6 @@ export default function Navbar() {
             ))}
           </nav>
           <div className="mt-12 flex flex-col gap-3">
-            <Link href="/login" onClick={() => setMobileOpen(false)}>
-              <Button variant="outline" size="lg" className="w-full rounded-2xl h-14 font-bold text-lg">
-                Entrar na minha conta
-              </Button>
-            </Link>
             <Link href="/signup" onClick={() => setMobileOpen(false)}>
               <Button size="lg" className="w-full rounded-2xl h-14 font-bold text-lg bg-primary text-primary-foreground">
                 Começar grátis
