@@ -28,9 +28,9 @@ export default function DiscoverPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-muted pt-16">
+      <main className="min-h-screen bg-[#fcfcfc] pt-16">
         {/* Header */}
-        <div className="bg-white border-b border-border sticky top-16 z-40">
+        <div className="bg-white/80 backdrop-blur-md border-b border-[#e5e5e5] sticky top-16 z-40">
           <div className="container-narrow py-6">
             <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between mb-5">
               <div>
@@ -44,7 +44,7 @@ export default function DiscoverPage() {
                   {COMMUNITIES.length} comunidades disponíveis
                 </p>
               </div>
-              <button className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-border text-sm font-medium text-foreground hover:bg-muted transition-colors">
+              <button className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-[#e5e5e5] text-sm font-medium text-[#0a0a0a] bg-white shadow-sm hover:bg-[#f5f5f5] transition-colors">
                 <SlidersHorizontal className="w-4 h-4" />
                 Filtros
               </button>
@@ -57,7 +57,7 @@ export default function DiscoverPage() {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Buscar comunidades, tópicos ou criadores..."
-                className="pl-10 h-11 rounded-xl border-border bg-muted focus-visible:bg-white"
+                className="pl-10 h-11 rounded-xl border-[#e5e5e5] bg-[#f5f5f5] focus-visible:bg-white focus-visible:border-[#09090b] transition-all"
               />
             </div>
 
@@ -69,8 +69,8 @@ export default function DiscoverPage() {
                   onClick={() => setActiveCategory(cat)}
                   className={`shrink-0 px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${
                     activeCategory === cat
-                      ? "bg-[#09090b] text-white shadow-sm"
-                      : "bg-white border border-border text-foreground hover:border-[#09090b]/40 hover:text-[#09090b]"
+                      ? "bg-[#09090b] text-white shadow-md shadow-black/10"
+                      : "bg-white border border-[#e5e5e5] shadow-sm text-[#737373] hover:border-[#09090b]/20 hover:text-[#09090b]"
                   }`}
                 >
                   {cat}
@@ -96,7 +96,7 @@ export default function DiscoverPage() {
             </>
           ) : (
             <div className="text-center py-20">
-              <div className="w-16 h-16 rounded-2xl bg-secondary mx-auto mb-4 flex items-center justify-center">
+              <div className="w-16 h-16 rounded-2xl bg-[#f5f5f5] mx-auto mb-4 flex items-center justify-center">
                 <Search className="w-8 h-8 text-[#09090b]" />
               </div>
               <h3
@@ -113,7 +113,7 @@ export default function DiscoverPage() {
                   setSearch("");
                   setActiveCategory("Todos");
                 }}
-                className="px-6 py-2.5 rounded-full bg-[#09090b] text-white font-semibold text-sm hover:bg-brand-dark transition-colors"
+                className="px-6 py-2.5 rounded-full bg-[#09090b] shadow-md shadow-black/10 text-white font-semibold text-sm hover:bg-[#1a1a1a] transition-all"
               >
                 Ver todas as comunidades
               </button>

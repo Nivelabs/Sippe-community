@@ -39,9 +39,9 @@ export default function ProfilePage() {
   const user = CURRENT_USER;
 
   return (
-    <div className="min-h-screen bg-[#f5f5f5]">
+    <div className="min-h-screen bg-[#fcfcfc]">
       {/* Top bar */}
-      <header className="bg-white border-b border-[#e5e5e5] h-14 flex items-center px-4 sticky top-0 z-20">
+      <header className="bg-white/80 backdrop-blur-md border-b border-[#e5e5e5] h-14 flex items-center px-4 sticky top-0 z-20">
         <Link href="/dashboard" className="flex items-center gap-2 text-[#737373] hover:text-[#0a0a0a] transition-colors mr-4">
           <ArrowLeft className="w-4 h-4" />
           <span className="text-sm font-medium">Voltar</span>
@@ -162,7 +162,7 @@ export default function ProfilePage() {
       </div>
 
       {/* Tabs */}
-      <div className="bg-white border-b border-[#e5e5e5] sticky top-14 z-10">
+      <div className="bg-white/80 backdrop-blur-md border-b border-[#e5e5e5] sticky top-14 z-10">
         <div className="max-w-4xl mx-auto px-4 sm:px-8">
           <div className="flex gap-0">
             {tabs.map((tab) => (
@@ -190,7 +190,7 @@ export default function ProfilePage() {
             {activeTab === "Posts" && (
               <>
                 {POSTS.map((post) => (
-                  <div key={post.id} className="bg-white rounded-2xl border border-[#e5e5e5] p-5">
+                  <div key={post.id} className="bg-white rounded-2xl border border-[#e5e5e5] p-5 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_32px_-8px_rgba(0,0,0,0.08)] transition-shadow">
                     <div className="flex items-start gap-3">
                       <Avatar className="w-10 h-10 shrink-0">
                         <AvatarImage src={user.avatar} alt={user.fullName} />
@@ -235,7 +235,7 @@ export default function ProfilePage() {
               <div className="grid sm:grid-cols-2 gap-4">
                 {user.myCommunities.map((c) => (
                   <Link key={c.id} href={`/c/${c.slug}`} className="group">
-                    <div className="bg-white rounded-2xl border border-[#e5e5e5] p-4 hover:shadow-md transition-all">
+                    <div className="bg-white rounded-2xl border border-[#e5e5e5] p-4 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_32px_-8px_rgba(0,0,0,0.08)] transition-all">
                       <div className="flex items-center gap-3 mb-3">
                         <img
                           src={c.avatar}
@@ -268,7 +268,7 @@ export default function ProfilePage() {
                 {ACHIEVEMENTS.map((ach) => (
                   <div
                     key={ach.title}
-                    className="bg-white rounded-2xl border border-[#e5e5e5] p-4 flex items-center gap-4"
+                    className="bg-white rounded-2xl border border-[#e5e5e5] p-4 flex items-center gap-4 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.05)]"
                   >
                     <div
                       className="w-12 h-12 rounded-2xl flex items-center justify-center text-2xl shrink-0"
@@ -289,7 +289,7 @@ export default function ProfilePage() {
           {/* Sidebar */}
           <div className="space-y-5">
             {/* Level card */}
-            <div className="bg-white rounded-2xl border border-[#e5e5e5] p-5">
+            <div className="bg-white rounded-2xl border border-[#e5e5e5] p-5 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.05)]">
               <h3 className="text-sm font-bold text-[#0a0a0a] mb-4 flex items-center gap-2">
                 <Trophy className="w-4 h-4 text-[#f59e0b]" /> Progresso
               </h3>
@@ -317,7 +317,7 @@ export default function ProfilePage() {
             </div>
 
             {/* Suggested people */}
-            <div className="bg-white rounded-2xl border border-[#e5e5e5] p-5">
+            <div className="bg-white rounded-2xl border border-[#e5e5e5] p-5 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.05)]">
               <h3 className="text-sm font-bold text-[#0a0a0a] mb-4">Comunidades populares</h3>
               <div className="space-y-3">
                 {COMMUNITIES.slice(0, 3).map((c) => (

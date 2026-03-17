@@ -101,9 +101,9 @@ export default function CreateCommunityPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#f5f5f5]">
+    <div className="min-h-screen bg-[#fcfcfc]">
       {/* Header */}
-      <header className="bg-white border-b border-[#e5e5e5] h-14 flex items-center px-4 sticky top-0 z-20">
+      <header className="bg-white/80 backdrop-blur-md border-b border-[#e5e5e5] h-14 flex items-center px-4 sticky top-0 z-20">
         <Link href="/dashboard" className="flex items-center gap-2 text-[#737373] hover:text-[#0a0a0a] transition-colors mr-4">
           <ArrowLeft className="w-4 h-4" />
           <span className="text-sm font-medium hidden sm:inline">Cancelar</span>
@@ -146,7 +146,7 @@ export default function CreateCommunityPage() {
 
         {/* Step 0: Básico */}
         {step === 0 && (
-          <div className="bg-white rounded-2xl border border-[#e5e5e5] p-6 sm:p-8 space-y-6">
+          <div className="bg-white rounded-2xl border border-[#e5e5e5] p-6 sm:p-8 space-y-6 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.05)]">
             <div>
               <h2 className="text-xl font-extrabold text-[#0a0a0a] mb-1" style={{ fontFamily: "var(--font-jakarta)" }}>
                 Informações básicas
@@ -242,7 +242,7 @@ export default function CreateCommunityPage() {
 
         {/* Step 1: Detalhes */}
         {step === 1 && (
-          <div className="bg-white rounded-2xl border border-[#e5e5e5] p-6 sm:p-8 space-y-8">
+          <div className="bg-white rounded-2xl border border-[#e5e5e5] p-6 sm:p-8 space-y-8 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.05)]">
             <div>
               <h2 className="text-xl font-extrabold text-[#0a0a0a] mb-1" style={{ fontFamily: "var(--font-jakarta)" }}>
                 Categoria e privacidade
@@ -303,7 +303,7 @@ export default function CreateCommunityPage() {
 
         {/* Step 2: Plano */}
         {step === 2 && (
-          <div className="bg-white rounded-2xl border border-[#e5e5e5] p-6 sm:p-8 space-y-8">
+          <div className="bg-white rounded-2xl border border-[#e5e5e5] p-6 sm:p-8 space-y-8 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.05)]">
             <div>
               <h2 className="text-xl font-extrabold text-[#0a0a0a] mb-1" style={{ fontFamily: "var(--font-jakarta)" }}>
                 Modelo de monetização
@@ -367,7 +367,7 @@ export default function CreateCommunityPage() {
 
         {/* Step 3: Finalizar */}
         {step === 3 && (
-          <div className="bg-white rounded-2xl border border-[#e5e5e5] p-6 sm:p-8 space-y-6">
+          <div className="bg-white rounded-2xl border border-[#e5e5e5] p-6 sm:p-8 space-y-6 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.05)]">
             <div>
               <h2 className="text-xl font-extrabold text-[#0a0a0a] mb-1" style={{ fontFamily: "var(--font-jakarta)" }}>
                 Tudo pronto! 🚀

@@ -118,9 +118,9 @@ export default function SettingsPage() {
     setPrivacy((p) => ({ ...p, [key]: val }));
 
   return (
-    <div className="min-h-screen bg-[#f5f5f5]">
+    <div className="min-h-screen bg-[#fcfcfc]">
       {/* Header */}
-      <header className="bg-white border-b border-[#e5e5e5] h-14 flex items-center px-4 sticky top-0 z-20">
+      <header className="bg-white/80 backdrop-blur-md border-b border-[#e5e5e5] h-14 flex items-center px-4 sticky top-0 z-20">
         <Link
           href="/dashboard"
           className="flex items-center gap-2 text-[#737373] hover:text-[#0a0a0a] transition-colors mr-4"
@@ -145,7 +145,7 @@ export default function SettingsPage() {
 
       {/* Mobile tab dropdown */}
       {mobileSidebarOpen && (
-        <div className="sm:hidden bg-white border-b border-[#e5e5e5] px-4 py-2 flex gap-2 flex-wrap">
+        <div className="sm:hidden bg-white/80 backdrop-blur-md border-b border-[#e5e5e5] px-4 py-2 flex gap-2 flex-wrap sticky top-14 z-10">
           {TABS.map((tab) => (
             <button
               key={tab.id}
@@ -193,7 +193,7 @@ export default function SettingsPage() {
             {/* PROFILE TAB */}
             {activeTab === "profile" && (
               <>
-                <div className="bg-white rounded-2xl border border-[#e5e5e5] p-6">
+                <div className="bg-white rounded-2xl border border-[#e5e5e5] p-6 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.05)]">
                   <h2 className="text-base font-bold text-[#0a0a0a] mb-5">Informações do perfil</h2>
 
                   {/* Avatar */}
@@ -287,7 +287,7 @@ export default function SettingsPage() {
             {/* ACCOUNT TAB */}
             {activeTab === "account" && (
               <>
-                <div className="bg-white rounded-2xl border border-[#e5e5e5] p-6">
+                <div className="bg-white rounded-2xl border border-[#e5e5e5] p-6 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.05)]">
                   <h2 className="text-base font-bold text-[#0a0a0a] mb-5">E-mail e senha</h2>
                   <div className="space-y-5">
                     <div>
@@ -330,7 +330,7 @@ export default function SettingsPage() {
                   </div>
                 </div>
 
-                <div className="bg-white rounded-2xl border border-[#e5e5e5] p-6">
+                <div className="bg-white rounded-2xl border border-[#e5e5e5] p-6 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.05)]">
                   <h2 className="text-base font-bold text-[#0a0a0a] mb-1">Preferências</h2>
                   <div className="divide-y divide-[#f5f5f5]">
                     <SettingRow title="Tema escuro" desc="Ativar modo dark">
@@ -355,7 +355,7 @@ export default function SettingsPage() {
                   </div>
                 </div>
 
-                <div className="bg-white rounded-2xl border border-red-100 p-6">
+                <div className="bg-white rounded-2xl border border-red-100 p-6 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.05)]">
                   <h2 className="text-base font-bold text-red-600 mb-1">Zona de perigo</h2>
                   <p className="text-xs text-[#a3a3a3] mb-4">
                     Ações irreversíveis que afetam permanentemente sua conta.
@@ -376,7 +376,7 @@ export default function SettingsPage() {
 
             {/* PRIVACY TAB */}
             {activeTab === "privacy" && (
-              <div className="bg-white rounded-2xl border border-[#e5e5e5] p-6">
+              <div className="bg-white rounded-2xl border border-[#e5e5e5] p-6 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.05)]">
                 <h2 className="text-base font-bold text-[#0a0a0a] mb-1">Privacidade e segurança</h2>
                 <div className="divide-y divide-[#f5f5f5]">
                   <SettingRow title="Perfil público" desc="Qualquer pessoa pode ver seu perfil">
@@ -404,7 +404,7 @@ export default function SettingsPage() {
             {/* NOTIFICATIONS TAB */}
             {activeTab === "notifications" && (
               <>
-                <div className="bg-white rounded-2xl border border-[#e5e5e5] p-6">
+                <div className="bg-white rounded-2xl border border-[#e5e5e5] p-6 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.05)]">
                   <h2 className="text-base font-bold text-[#0a0a0a] mb-1.5">Notificações por e-mail</h2>
                   <div className="divide-y divide-[#f5f5f5]">
                     <SettingRow title="Novo post na comunidade" desc="Quando alguém publicar">
@@ -419,7 +419,7 @@ export default function SettingsPage() {
                   </div>
                 </div>
 
-                <div className="bg-white rounded-2xl border border-[#e5e5e5] p-6">
+                <div className="bg-white rounded-2xl border border-[#e5e5e5] p-6 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.05)]">
                   <h2 className="text-base font-bold text-[#0a0a0a] mb-1.5">Notificações push</h2>
                   <div className="divide-y divide-[#f5f5f5]">
                     <SettingRow title="Todas as notificações" desc="Liga/desliga tudo">

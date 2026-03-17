@@ -55,7 +55,7 @@ export default function CommunityPage({
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-muted pt-16">
+      <main className="min-h-screen bg-[#fcfcfc] pt-16">
         {/* Banner */}
         <div className="relative h-48 md:h-64 overflow-hidden bg-secondary">
           <img
@@ -103,10 +103,10 @@ export default function CommunityPage({
                   {/* Join Button */}
                   <button
                     onClick={() => setJoined(!joined)}
-                    className={`shrink-0 px-6 py-2.5 rounded-full font-bold text-sm transition-colors ${
+                    className={`shrink-0 px-6 py-2.5 rounded-full font-bold text-sm transition-all ${
                       joined
-                        ? "bg-secondary text-secondary-foreground border border-[#09090b]/30 hover:bg-[#09090b]/10"
-                        : "bg-[#09090b] text-white hover:bg-brand-dark shadow-sm"
+                        ? "bg-[#f5f5f5] text-[#0a0a0a] border border-[#e5e5e5] hover:border-[#09090b]/20 hover:bg-[#eaeaea] shadow-sm"
+                        : "bg-[#09090b] text-white hover:bg-[#1a1a1a] shadow-md shadow-black/10"
                     }`}
                   >
                     {joined ? "✓ Membro" : "Participar"}
@@ -184,7 +184,7 @@ export default function CommunityPage({
               <div className="grid lg:grid-cols-3 gap-6">
                 <div className="lg:col-span-2 space-y-4">
                   {/* New post composer */}
-                  <div className="bg-white rounded-2xl border border-border p-4">
+                  <div className="bg-white rounded-2xl border border-[#e5e5e5] shadow-[0_4px_24px_-8px_rgba(0,0,0,0.05)] p-4">
                     <div className="flex items-center gap-3">
                       <div className="w-9 h-9 rounded-full bg-secondary flex items-center justify-center text-[#09090b] font-bold text-sm">
                         V
@@ -205,7 +205,7 @@ export default function CommunityPage({
                   {POSTS.map((post) => (
                     <div
                       key={post.id}
-                      className="bg-white rounded-2xl border border-border p-5"
+                      className="bg-white rounded-2xl border border-[#e5e5e5] p-5 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_32px_-8px_rgba(0,0,0,0.08)] transition-shadow"
                     >
                       {post.pinned && (
                         <div className="flex items-center gap-1.5 text-xs text-muted-foreground mb-3">
@@ -275,7 +275,7 @@ export default function CommunityPage({
                 {/* Sidebar */}
                 <div className="space-y-4">
                   {/* Online members */}
-                  <div className="bg-white rounded-2xl border border-border p-4">
+                  <div className="bg-white rounded-2xl border border-[#e5e5e5] shadow-[0_4px_24px_-8px_rgba(0,0,0,0.05)] p-4">
                     <h3 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
                       <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                       Online agora ({community.online})
@@ -294,7 +294,7 @@ export default function CommunityPage({
                   </div>
 
                   {/* Top leaderboard */}
-                  <div className="bg-white rounded-2xl border border-border p-4">
+                  <div className="bg-white rounded-2xl border border-[#e5e5e5] shadow-[0_4px_24px_-8px_rgba(0,0,0,0.05)] p-4">
                     <h3 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-1.5">
                       <Trophy className="w-4 h-4 text-[#09090b]" />
                       Top membros
@@ -329,7 +329,7 @@ export default function CommunityPage({
                 {COURSES.map((course) => (
                   <div
                     key={course.id}
-                    className="bg-white rounded-2xl border border-border overflow-hidden hover:shadow-md transition-shadow group"
+                    className="bg-white rounded-2xl border border-[#e5e5e5] overflow-hidden shadow-[0_4px_24px_-8px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_32px_-8px_rgba(0,0,0,0.08)] transition-all group"
                   >
                     <div className="relative h-36 overflow-hidden">
                       <img
@@ -384,7 +384,7 @@ export default function CommunityPage({
 
             {/* MEMBERS */}
             <TabsContent value="membros">
-              <div className="bg-white rounded-2xl border border-border overflow-hidden">
+              <div className="bg-white rounded-2xl border border-[#e5e5e5] shadow-[0_4px_24px_-8px_rgba(0,0,0,0.05)] overflow-hidden">
                 <div className="p-4 border-b border-border flex items-center justify-between">
                   <h3 className="font-semibold text-foreground flex items-center gap-2">
                     <Trophy className="w-4 h-4 text-[#09090b]" />
@@ -465,7 +465,7 @@ export default function CommunityPage({
                 {EVENTS.map((event) => (
                   <div
                     key={event.id}
-                    className="bg-white rounded-2xl border border-border overflow-hidden flex flex-col sm:flex-row"
+                    className="bg-white rounded-2xl border border-[#e5e5e5] shadow-[0_4px_24px_-8px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_32px_-8px_rgba(0,0,0,0.08)] transition-all overflow-hidden flex flex-col sm:flex-row"
                   >
                     <div className="relative h-40 sm:h-auto sm:w-48 shrink-0 overflow-hidden bg-muted">
                       <img
@@ -535,7 +535,7 @@ export default function CommunityPage({
             <TabsContent value="sobre">
               <div className="grid lg:grid-cols-3 gap-6">
                 <div className="lg:col-span-2">
-                  <div className="bg-white rounded-2xl border border-border p-6">
+                  <div className="bg-white rounded-2xl border border-[#e5e5e5] shadow-[0_4px_24px_-8px_rgba(0,0,0,0.05)] p-6">
                     <h3
                       className="text-lg font-bold text-foreground mb-4"
                       style={{ fontFamily: "var(--font-jakarta)" }}
@@ -582,7 +582,7 @@ export default function CommunityPage({
                 </div>
 
                 {/* Owner card */}
-                <div className="bg-white rounded-2xl border border-border p-6 h-fit">
+                <div className="bg-white rounded-2xl border border-[#e5e5e5] shadow-[0_4px_24px_-8px_rgba(0,0,0,0.05)] p-6 h-fit">
                   <h3 className="text-sm font-semibold text-foreground mb-4">Criado por</h3>
                   <div className="flex items-center gap-3 mb-4">
                     <img
