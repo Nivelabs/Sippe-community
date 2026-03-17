@@ -18,7 +18,7 @@ export default function Features() {
     <section id="features" className="section-padding bg-muted">
       <div className="container-narrow">
         {/* Header */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -73,7 +73,7 @@ export default function Features() {
         </div>
 
         {/* Bottom banner */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
@@ -81,7 +81,7 @@ export default function Features() {
           className="mt-12 rounded-3xl bg-gradient-to-br from-primary to-brand-dark p-8 lg:p-12 text-white flex flex-col lg:flex-row items-center justify-between gap-6 relative overflow-hidden"
         >
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
-          
+
           <div className="relative z-10">
             <h3
               className="text-2xl lg:text-3xl font-extrabold mb-2"
