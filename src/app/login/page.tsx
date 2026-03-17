@@ -41,7 +41,7 @@ export default function LoginPage() {
         <Link href="/" className="flex items-center gap-3 relative z-10">
           <div className="flex items-center gap-2">
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="32" height="32" rx="8" fill="#1db954"/>
+              <rect width="32" height="32" rx="8" fill="#09090b"/>
               <path d="M8 20L14 14L18 18L24 12" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
               <circle cx="8" cy="20" r="2" fill="white"/>
               <circle cx="24" cy="12" r="2" fill="white"/>
@@ -56,7 +56,7 @@ export default function LoginPage() {
         <div className="relative z-10 space-y-8">
           <div>
             <div className="inline-flex items-center gap-2 bg-white/10 border border-white/10 rounded-full px-4 py-2 mb-6">
-              <div className="w-2 h-2 rounded-full bg-[#1db954] animate-pulse" />
+              <div className="w-2 h-2 rounded-full bg-[#09090b] animate-pulse" />
               <span className="text-white/70 text-xs font-medium">+15.000 criadores ativos</span>
             </div>
             <h2
@@ -65,7 +65,7 @@ export default function LoginPage() {
             >
               Bem-vindo de volta.
               <br />
-              <span className="text-[#1db954]">Sua comunidade</span>
+              <span className="text-[#09090b]">Sua comunidade</span>
               <br />
               sentiu sua falta.
             </h2>
@@ -82,7 +82,7 @@ export default function LoginPage() {
               { value: "R$120M+", label: "Gerado" },
             ].map((stat) => (
               <div key={stat.label} className="bg-white/5 border border-white/10 rounded-2xl p-4">
-                <p className="text-[#1db954] text-xl font-bold" style={{ fontFamily: "var(--font-jakarta)" }}>
+                <p className="text-[#09090b] text-xl font-bold" style={{ fontFamily: "var(--font-jakarta)" }}>
                   {stat.value}
                 </p>
                 <p className="text-white/40 text-xs mt-1">{stat.label}</p>
@@ -94,7 +94,7 @@ export default function LoginPage() {
           <div className="bg-white/5 border border-white/10 rounded-2xl p-5">
             <div className="flex gap-1 mb-3">
               {[...Array(5)].map((_, i) => (
-                <svg key={i} className="w-4 h-4 text-[#1db954]" fill="currentColor" viewBox="0 0 20 20">
+                <svg key={i} className="w-4 h-4 text-[#09090b]" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
                 </svg>
               ))}
@@ -159,7 +159,7 @@ export default function LoginPage() {
               </h1>
               <p className="text-[#737373] text-sm">
                 Não tem uma conta?{" "}
-                <Link href="/signup" className="text-[#1db954] font-semibold hover:text-[#16a34a] transition-colors">
+                <Link href="/signup" className="text-[#09090b] font-semibold hover:text-[#27272a] transition-colors">
                   Cadastre-se grátis
                 </Link>
               </p>
@@ -200,7 +200,7 @@ export default function LoginPage() {
                   id="email"
                   type="email"
                   placeholder="seu@email.com"
-                  className="h-11 rounded-xl border-[#e5e5e5] bg-white text-[#0a0a0a] placeholder:text-[#a3a3a3] focus:border-[#1db954] focus:ring-[#1db954]/20"
+                  className="h-11 rounded-xl border-[#e5e5e5] bg-white text-[#0a0a0a] placeholder:text-[#a3a3a3] focus:border-[#09090b] focus:ring-[#09090b]/20"
                 />
               </div>
 
@@ -209,7 +209,7 @@ export default function LoginPage() {
                   <Label htmlFor="password" className="text-sm font-medium text-[#0a0a0a]">
                     Senha
                   </Label>
-                  <Link href="#" className="text-xs text-[#1db954] hover:text-[#16a34a] font-medium transition-colors">
+                  <Link href="#" className="text-xs text-[#09090b] hover:text-[#27272a] font-medium transition-colors">
                     Esqueceu a senha?
                   </Link>
                 </div>
@@ -218,7 +218,7 @@ export default function LoginPage() {
                     id="password"
                     type={showPassword ? "text" : "password"}
                     placeholder="••••••••"
-                    className="h-11 rounded-xl border-[#e5e5e5] bg-white text-[#0a0a0a] placeholder:text-[#a3a3a3] focus:border-[#1db954] focus:ring-[#1db954]/20 pr-11"
+                    className="h-11 rounded-xl border-[#e5e5e5] bg-white text-[#0a0a0a] placeholder:text-[#a3a3a3] focus:border-[#09090b] focus:ring-[#09090b]/20 pr-11"
                   />
                   <button
                     type="button"

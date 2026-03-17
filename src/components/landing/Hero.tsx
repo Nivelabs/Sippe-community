@@ -31,30 +31,8 @@ const staggerContainer: Variants = {
 export default function Hero() {
   return (
     <section className="relative overflow-hidden pt-28 pb-20 lg:pt-36 lg:pb-28">
-      {/* Background gradient blobs */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 0.2, scale: 1 }}
-        transition={{ duration: 1.5, ease: "easeOut" }}
-        className="absolute top-0 right-0 w-[700px] h-[600px] rounded-full pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(circle, #22c55e 0%, #bbf7d0 40%, transparent 70%)",
-          transform: "translate(30%, -30%)",
-        }}
-      />
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 0.1, scale: 1 }}
-        transition={{ duration: 1.5, ease: "easeOut", delay: 0.2 }}
-        className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full pointer-events-none"
-        style={{
-          background: "radial-gradient(circle, #22c55e 0%, transparent 70%)",
-          transform: "translate(-40%, 40%)",
-        }}
-      />
-
-      <div className="container-narrow relative">
+      {/* Removed heavy radial gradients for better performance and clean B&W aesthetic */}
+      <div className="container-narrow relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left: Text */}
           <motion.div
@@ -63,7 +41,7 @@ export default function Hero() {
             animate="visible"
           >
             {/* Social proof pill */}
-            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary border border-primary/20 mb-8 shadow-sm">
+            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary border border-[#09090b]/20 mb-8 shadow-sm">
               <div className="flex -space-x-1.5">
                 {[1, 2, 3].map((i) => (
                   <img
@@ -78,7 +56,7 @@ export default function Hero() {
               </div>
               <div className="flex items-center gap-1">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-3 h-3 fill-primary text-primary" />
+                  <Star key={i} className="w-3 h-3 fill-primary text-[#09090b]" />
                 ))}
               </div>
               <span className="text-sm font-medium text-secondary-foreground">
@@ -93,7 +71,7 @@ export default function Hero() {
               style={{ color: "var(--heading)" }}
             >
               Cresça sua{" "}
-              <span className="text-primary relative inline-block">
+              <span className="text-[#09090b] relative inline-block">
                 comunidade.
                 <motion.span
                   initial={{ opacity: 0, scale: 0.5 }}
@@ -119,7 +97,7 @@ export default function Hero() {
                     animate={{ pathLength: 1, opacity: 1 }}
                     transition={{ duration: 1, delay: 0.6, ease: "easeInOut" }}
                     d="M2 9.5C60 3.5 150 1 298 9.5"
-                    stroke="#22c55e"
+                    stroke="#09090b"
                     strokeWidth="3"
                     strokeLinecap="round"
                   />
@@ -138,7 +116,7 @@ export default function Hero() {
               <Link href="/signup">
                 <Button
                   size="lg"
-                  className="rounded-full bg-primary text-white hover:bg-brand-dark font-bold px-8 text-base shadow-lg shadow-primary/25 group relative overflow-hidden"
+                  className="rounded-full bg-[#09090b] text-white hover:bg-brand-dark font-bold px-8 text-base shadow-lg shadow-primary/25 group relative overflow-hidden"
                 >
                   <span className="relative z-10 flex items-center">
                     Começar agora
@@ -152,8 +130,8 @@ export default function Hero() {
                 variant="outline"
                 className="rounded-full font-semibold text-base px-6 gap-2 hover:bg-secondary transition-colors"
               >
-                <div className="w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center">
-                  <Play className="w-3 h-3 text-primary fill-primary" />
+                <div className="w-7 h-7 rounded-full bg-[#09090b]/10 flex items-center justify-center">
+                  <Play className="w-3 h-3 text-[#09090b] fill-primary" />
                 </div>
                 Ver como funciona
               </Button>
@@ -168,7 +146,7 @@ export default function Hero() {
               ].map(({ icon: Icon, label, value }) => (
                 <div key={label} className="flex items-center gap-2">
                   <div className="w-8 h-8 rounded-lg bg-secondary flex items-center justify-center">
-                    <Icon className="w-4 h-4 text-primary" />
+                    <Icon className="w-4 h-4 text-[#09090b]" />
                   </div>
                   <div>
                     <p className="text-sm font-bold text-foreground leading-none">{value}</p>
@@ -187,7 +165,7 @@ export default function Hero() {
             className="relative lg:block"
           >
             {/* Background glowing shape for the dashboard */}
-            <div className="absolute -inset-1 bg-gradient-to-r from-primary/30 to-emerald-200/20 rounded-[2rem] blur-xl opacity-70 -z-10" />
+            <div className="absolute -inset-1 bg-gradient-to-br from-[#09090b]/10 to-transparent rounded-[2rem] blur-lg opacity-50 -z-10" />
             
             <div
               className="relative rounded-3xl overflow-hidden shadow-2xl border border-border/60 bg-white/80 backdrop-blur-sm"
@@ -242,7 +220,7 @@ export default function Hero() {
                       key={tab}
                       className={`px-4 py-2.5 text-xs font-medium border-b-2 transition-colors ${
                         i === 0
-                          ? "border-primary text-primary"
+                          ? "border-[#09090b] text-[#09090b]"
                           : "border-transparent text-muted-foreground"
                       }`}
                     >
@@ -274,7 +252,7 @@ export default function Hero() {
                       initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.8 + (idx * 0.15), type: "spring" }}
-                      className="bg-white rounded-xl p-3 border border-border/80 shadow-sm hover:border-primary/30 transition-colors"
+                      className="bg-white rounded-xl p-3 border border-border/80 shadow-sm hover:border-[#09090b]/30 transition-colors"
                     >
                       <div className="flex items-center gap-2 mb-2">
                         <img
@@ -292,7 +270,7 @@ export default function Hero() {
                         <span className="text-xs text-muted-foreground flex items-center gap-1">
                           <span className="text-[10px]">❤️</span> {post.likes}
                         </span>
-                        <span className="text-xs text-muted-foreground flex items-center gap-1 hover:text-primary cursor-pointer transition-colors">
+                        <span className="text-xs text-muted-foreground flex items-center gap-1 hover:text-[#09090b] cursor-pointer transition-colors">
                           <span className="text-[10px]">💬</span> Ver comentários
                         </span>
                       </div>
@@ -311,7 +289,7 @@ export default function Hero() {
               style={{ minWidth: 180 }}
             >
               <div className="w-10 h-10 rounded-xl bg-secondary flex items-center justify-center">
-                <TrendingUp className="w-5 h-5 text-primary" />
+                <TrendingUp className="w-5 h-5 text-[#09090b]" />
               </div>
               <div>
                 <p className="text-sm font-bold text-foreground">+340 membros</p>
@@ -325,7 +303,7 @@ export default function Hero() {
               transition={{ delay: 1.3, type: "spring", stiffness: 150 }}
               className="absolute -top-4 -right-4 bg-white rounded-2xl shadow-xl border border-border/50 p-3 flex items-center gap-3 z-20 backdrop-blur-md"
             >
-              <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-xl bg-[#09090b]/10 flex items-center justify-center">
                 <span className="text-lg">🏆</span>
               </div>
               <div>

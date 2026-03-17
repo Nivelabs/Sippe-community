@@ -99,7 +99,7 @@ export default function DashboardPage() {
               <item.icon className="w-4 h-4 shrink-0" />
               <span className="flex-1">{item.label}</span>
               {item.badge && (
-                <span className="w-5 h-5 rounded-full bg-[#1db954] text-white text-[10px] font-bold flex items-center justify-center">
+                <span className="w-5 h-5 rounded-full bg-[#09090b] text-white text-[10px] font-bold flex items-center justify-center">
                   {item.badge}
                 </span>
               )}
@@ -128,7 +128,7 @@ export default function DashboardPage() {
                   {c.name}
                 </span>
                 {c.unread > 0 && (
-                  <span className="text-[10px] font-bold text-[#1db954]">{c.unread}</span>
+                  <span className="text-[10px] font-bold text-[#09090b]">{c.unread}</span>
                 )}
               </Link>
             ))}
@@ -152,7 +152,7 @@ export default function DashboardPage() {
               <AvatarFallback className="text-sm font-bold">{user.fullName[0]}</AvatarFallback>
             </Avatar>
             <div className="flex-1 min-w-0">
-              <p className="text-sm font-semibold text-[#0a0a0a] truncate group-hover:text-[#1db954] transition-colors">
+              <p className="text-sm font-semibold text-[#0a0a0a] truncate group-hover:text-[#09090b] transition-colors">
                 {user.fullName}
               </p>
               <p className="text-xs text-[#a3a3a3]">Nível {user.level}</p>
@@ -184,7 +184,7 @@ export default function DashboardPage() {
               <Button
                 size="sm"
                 className="rounded-full font-semibold text-sm hidden sm:flex"
-                style={{ background: "#1db954", color: "white" }}
+                style={{ background: "#09090b", color: "white" }}
               >
                 <Plus className="w-4 h-4 mr-1.5" />
                 Nova Comunidade
@@ -192,7 +192,7 @@ export default function DashboardPage() {
             </Link>
             <button className="relative p-2 rounded-lg hover:bg-[#f5f5f5] transition-colors">
               <Bell className="w-5 h-5 text-[#737373]" />
-              <span className="absolute top-1 right-1 w-2 h-2 rounded-full bg-[#1db954]" />
+              <span className="absolute top-1 right-1 w-2 h-2 rounded-full bg-[#09090b]" />
             </button>
             <Link href="/profile">
               <Avatar className="w-9 h-9">
@@ -208,7 +208,7 @@ export default function DashboardPage() {
           {/* Stats cards */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
             {[
-              { label: "Comunidades", value: user.communities, icon: Users, color: "#1db954", bg: "#f0fdf4" },
+              { label: "Comunidades", value: user.communities, icon: Users, color: "#09090b", bg: "#f4f4f5" },
               { label: "Cursos ativos", value: user.courses, icon: BookOpen, color: "#3b82f6", bg: "#eff6ff" },
               { label: "Pontos", value: user.points.toLocaleString(), icon: Trophy, color: "#f59e0b", bg: "#fffbeb" },
               { label: "Streak", value: `${user.streak}d`, icon: Flame, color: "#ef4444", bg: "#fef2f2" },
@@ -221,7 +221,7 @@ export default function DashboardPage() {
                   >
                     <stat.icon className="w-5 h-5" style={{ color: stat.color }} />
                   </div>
-                  <TrendingUp className="w-4 h-4 text-[#1db954]" />
+                  <TrendingUp className="w-4 h-4 text-[#09090b]" />
                 </div>
                 <p className="text-2xl font-extrabold text-[#0a0a0a]" style={{ fontFamily: "var(--font-jakarta)" }}>
                   {stat.value}
@@ -275,7 +275,7 @@ export default function DashboardPage() {
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 flex-wrap mb-1">
                         <span className="text-sm font-semibold text-[#0a0a0a]">{post.author}</span>
-                        <Badge className="text-[10px] bg-[#f0fdf4] text-[#1db954] border-0 h-4 px-1.5">
+                        <Badge className="text-[10px] bg-[#f4f4f5] text-[#09090b] border-0 h-4 px-1.5">
                           {post.role}
                         </Badge>
                         <span className="text-xs text-[#a3a3a3] flex items-center gap-1 ml-auto">
@@ -296,7 +296,7 @@ export default function DashboardPage() {
                         <button className="flex items-center gap-1.5 text-xs font-medium text-[#a3a3a3] hover:text-red-500 transition-colors">
                           <Heart className="w-4 h-4" />{post.likes}
                         </button>
-                        <button className="flex items-center gap-1.5 text-xs font-medium text-[#a3a3a3] hover:text-[#1db954] transition-colors">
+                        <button className="flex items-center gap-1.5 text-xs font-medium text-[#a3a3a3] hover:text-[#09090b] transition-colors">
                           <MessageCircle className="w-4 h-4" />{post.comments}
                         </button>
                         <span className="text-[10px] text-[#d4d4d4] ml-auto">
@@ -315,7 +315,7 @@ export default function DashboardPage() {
               <div className="bg-white rounded-2xl border border-[#e5e5e5] p-5">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="text-sm font-bold text-[#0a0a0a]">Meu Progresso</h3>
-                  <Badge className="bg-[#f0fdf4] text-[#1db954] border-0">
+                  <Badge className="bg-[#f4f4f5] text-[#09090b] border-0">
                     Nível {user.level}
                   </Badge>
                 </div>
@@ -325,7 +325,7 @@ export default function DashboardPage() {
                       <AvatarImage src={user.avatar} alt={user.fullName} />
                       <AvatarFallback className="font-bold text-lg">{user.fullName[0]}</AvatarFallback>
                     </Avatar>
-                    <div className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-[#1db954] border-2 border-white flex items-center justify-center">
+                    <div className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-[#09090b] border-2 border-white flex items-center justify-center">
                       <Zap className="w-2.5 h-2.5 text-white" />
                     </div>
                   </div>
@@ -337,11 +337,11 @@ export default function DashboardPage() {
                 <div className="mb-2">
                   <div className="flex justify-between items-center mb-1.5">
                     <span className="text-xs text-[#737373]">XP para o nível {user.level + 1}</span>
-                    <span className="text-xs font-bold text-[#1db954]">{user.points}/5000</span>
+                    <span className="text-xs font-bold text-[#09090b]">{user.points}/5000</span>
                   </div>
                   <div className="h-2 bg-[#f5f5f5] rounded-full overflow-hidden">
                     <div
-                      className="h-full bg-[#1db954] rounded-full transition-all"
+                      className="h-full bg-[#09090b] rounded-full transition-all"
                       style={{ width: `${(user.points / 5000) * 100}%` }}
                     />
                   </div>
@@ -362,7 +362,7 @@ export default function DashboardPage() {
               <div className="bg-white rounded-2xl border border-[#e5e5e5] p-5">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="text-sm font-bold text-[#0a0a0a]">Sugeridas para você</h3>
-                  <Link href="/discover" className="text-xs text-[#1db954] font-semibold hover:underline">
+                  <Link href="/discover" className="text-xs text-[#09090b] font-semibold hover:underline">
                     Ver mais
                   </Link>
                 </div>
@@ -381,14 +381,14 @@ export default function DashboardPage() {
                         height={40}
                       />
                       <div className="flex-1 min-w-0">
-                        <p className="text-sm font-semibold text-[#0a0a0a] group-hover:text-[#1db954] transition-colors truncate">
+                        <p className="text-sm font-semibold text-[#0a0a0a] group-hover:text-[#09090b] transition-colors truncate">
                           {c.name}
                         </p>
                         <p className="text-xs text-[#a3a3a3]">
                           {(c.members / 1000).toFixed(1)}k membros
                         </p>
                       </div>
-                      <ChevronRight className="w-4 h-4 text-[#d4d4d4] group-hover:text-[#1db954] transition-colors" />
+                      <ChevronRight className="w-4 h-4 text-[#d4d4d4] group-hover:text-[#09090b] transition-colors" />
                     </Link>
                   ))}
                 </div>

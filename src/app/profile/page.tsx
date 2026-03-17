@@ -28,7 +28,7 @@ const tabs = ["Posts", "Comunidades", "Conquistas"];
 const ACHIEVEMENTS = [
   { icon: "🔥", title: "Streaker", desc: "14 dias consecutivos", color: "#fef3c7" },
   { icon: "⭐", title: "Top Membro", desc: "Ficou no top 10", color: "#fef9c3" },
-  { icon: "🚀", title: "Early Adopter", desc: "Entrou no beta", color: "#f0fdf4" },
+  { icon: "🚀", title: "Early Adopter", desc: "Entrou no beta", color: "#f4f4f5" },
   { icon: "📚", title: "Estudioso", desc: "10 cursos concluídos", color: "#eff6ff" },
   { icon: "💬", title: "Comunicador", desc: "500 posts feitos", color: "#fdf4ff" },
   { icon: "🎯", title: "Objetivo!", desc: "Meta mensal atingida", color: "#fff7ed" },
@@ -64,7 +64,7 @@ export default function ProfilePage() {
         <div
           className="h-40 sm:h-52 w-full"
           style={{
-            background: "linear-gradient(135deg, #0a0a0a 0%, #1a2e21 50%, #1db954 100%)",
+            background: "linear-gradient(135deg, #0a0a0a 0%, #1a2e21 50%, #09090b 100%)",
           }}
         >
           {/* Grid overlay sutil */}
@@ -89,7 +89,7 @@ export default function ProfilePage() {
                   </AvatarFallback>
                 </Avatar>
                 {/* Level badge */}
-                <div className="absolute -bottom-1.5 -right-1.5 w-7 h-7 rounded-full bg-[#1db954] border-2 border-white flex items-center justify-center">
+                <div className="absolute -bottom-1.5 -right-1.5 w-7 h-7 rounded-full bg-[#09090b] border-2 border-white flex items-center justify-center">
                   <span className="text-[10px] font-bold text-white">{user.level}</span>
                 </div>
               </div>
@@ -111,7 +111,7 @@ export default function ProfilePage() {
                 <h1 className="text-xl sm:text-2xl font-extrabold text-[#0a0a0a]" style={{ fontFamily: "var(--font-jakarta)" }}>
                   {user.fullName}
                 </h1>
-                <Badge className="bg-[#f0fdf4] text-[#1db954] border-0 font-semibold">
+                <Badge className="bg-[#f4f4f5] text-[#09090b] border-0 font-semibold">
                   Nível {user.level}
                 </Badge>
               </div>
@@ -128,7 +128,7 @@ export default function ProfilePage() {
                     href={`https://${user.website}`}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center gap-1 text-[#1db954] hover:underline"
+                    className="flex items-center gap-1 text-[#09090b] hover:underline"
                   >
                     <Globe className="w-3.5 h-3.5" /> {user.website}
                   </a>
@@ -171,7 +171,7 @@ export default function ProfilePage() {
                 onClick={() => setActiveTab(tab)}
                 className={`px-5 py-4 text-sm font-semibold border-b-2 transition-colors ${
                   activeTab === tab
-                    ? "border-[#1db954] text-[#0a0a0a]"
+                    ? "border-[#09090b] text-[#0a0a0a]"
                     : "border-transparent text-[#a3a3a3] hover:text-[#737373]"
                 }`}
               >
@@ -217,7 +217,7 @@ export default function ProfilePage() {
                           <button className="flex items-center gap-1.5 text-xs font-medium text-[#a3a3a3] hover:text-red-500 transition-colors">
                             <Heart className="w-4 h-4" />{post.likes}
                           </button>
-                          <button className="flex items-center gap-1.5 text-xs font-medium text-[#a3a3a3] hover:text-[#1db954] transition-colors">
+                          <button className="flex items-center gap-1.5 text-xs font-medium text-[#a3a3a3] hover:text-[#09090b] transition-colors">
                             <MessageCircle className="w-4 h-4" />{post.comments}
                           </button>
                           <button className="flex items-center gap-1.5 text-xs font-medium text-[#a3a3a3] hover:text-[#0a0a0a] transition-colors ml-auto">
@@ -245,7 +245,7 @@ export default function ProfilePage() {
                           height={48}
                         />
                         <div className="flex-1 min-w-0">
-                          <h3 className="text-sm font-bold text-[#0a0a0a] truncate group-hover:text-[#1db954] transition-colors">
+                          <h3 className="text-sm font-bold text-[#0a0a0a] truncate group-hover:text-[#09090b] transition-colors">
                             {c.name}
                           </h3>
                           <Badge className="bg-[#f5f5f5] text-[#737373] border-0 text-[10px] mt-1">
@@ -298,7 +298,7 @@ export default function ProfilePage() {
                   { icon: Trophy, label: "Pontos totais", value: user.points.toLocaleString(), color: "#f59e0b" },
                   { icon: Flame, label: "Streak atual", value: `${user.streak} dias`, color: "#ef4444" },
                   { icon: BookOpen, label: "Cursos feitos", value: user.courses, color: "#3b82f6" },
-                  { icon: Users, label: "Comunidades", value: user.communities, color: "#1db954" },
+                  { icon: Users, label: "Comunidades", value: user.communities, color: "#09090b" },
                 ].map((item) => (
                   <div key={item.label} className="flex items-center gap-3">
                     <div
@@ -330,7 +330,7 @@ export default function ProfilePage() {
                       height={36}
                     />
                     <div className="flex-1 min-w-0">
-                      <p className="text-xs font-semibold text-[#0a0a0a] group-hover:text-[#1db954] truncate transition-colors">
+                      <p className="text-xs font-semibold text-[#0a0a0a] group-hover:text-[#09090b] truncate transition-colors">
                         {c.name}
                       </p>
                       <p className="text-[10px] text-[#a3a3a3]">{(c.members / 1000).toFixed(1)}k membros</p>

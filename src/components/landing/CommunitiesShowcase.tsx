@@ -23,7 +23,7 @@ export default function CommunitiesShowcase() {
           className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-10"
         >
           <div>
-            <span className="inline-block px-4 py-1.5 rounded-full bg-secondary text-primary text-sm font-semibold mb-3">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-secondary text-[#09090b] text-sm font-semibold mb-3">
               Comunidades em destaque
             </span>
             <h2

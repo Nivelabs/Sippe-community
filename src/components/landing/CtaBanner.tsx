@@ -8,7 +8,7 @@ export default function CtaBanner() {
         <div
           className="relative overflow-hidden rounded-3xl p-10 lg:p-16 text-center"
           style={{
-            background: "linear-gradient(135deg, #14532d 0%, #15803d 50%, #16a34a 100%)",
+            background: "linear-gradient(135deg, #14532d 0%, #3f3f46 50%, #27272a 100%)",
           }}
         >
           {/* Decorative circles */}
@@ -45,7 +45,7 @@ export default function CtaBanner() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/signup">
-                <button className="inline-flex items-center gap-2 bg-primary text-white font-bold px-8 py-4 rounded-full hover:bg-green-400 transition-colors text-base shadow-lg group">
+                <button className="inline-flex items-center gap-2 bg-[#09090b] text-white font-bold px-8 py-4 rounded-full hover:bg-green-400 transition-colors text-base shadow-lg group">
                   Criar minha comunidade
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                 </button>

@@ -125,7 +125,7 @@ export default function CreateCommunityPage() {
                 <div
                   className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold transition-all ${
                     i < step
-                      ? "bg-[#1db954] text-white"
+                      ? "bg-[#09090b] text-white"
                       : i === step
                       ? "bg-[#0a0a0a] text-white"
                       : "bg-[#e5e5e5] text-[#a3a3a3]"
@@ -138,7 +138,7 @@ export default function CreateCommunityPage() {
                 </span>
               </div>
               {i < STEPS.length - 1 && (
-                <div className={`flex-1 h-0.5 mx-2 mb-4 transition-all ${i < step ? "bg-[#1db954]" : "bg-[#e5e5e5]"}`} />
+                <div className={`flex-1 h-0.5 mx-2 mb-4 transition-all ${i < step ? "bg-[#09090b]" : "bg-[#e5e5e5]"}`} />
               )}
             </div>
           ))}
@@ -158,14 +158,14 @@ export default function CreateCommunityPage() {
             <div>
               <Label className="text-sm font-medium text-[#0a0a0a] mb-2 block">Capa da comunidade</Label>
               <div
-                className="relative h-36 rounded-xl border-2 border-dashed border-[#e5e5e5] overflow-hidden cursor-pointer hover:border-[#1db954] transition-colors group"
+                className="relative h-36 rounded-xl border-2 border-dashed border-[#e5e5e5] overflow-hidden cursor-pointer hover:border-[#09090b] transition-colors group"
                 onClick={() => coverRef.current?.click()}
               >
                 {form.coverPreview ? (
                   <img src={form.coverPreview} alt="Cover" className="w-full h-full object-cover" />
                 ) : (
                   <div className="flex flex-col items-center justify-center h-full gap-2">
-                    <ImagePlus className="w-8 h-8 text-[#a3a3a3] group-hover:text-[#1db954] transition-colors" />
+                    <ImagePlus className="w-8 h-8 text-[#a3a3a3] group-hover:text-[#09090b] transition-colors" />
                     <span className="text-xs text-[#a3a3a3]">Clique para adicionar uma capa</span>
                   </div>
                 )}
@@ -184,13 +184,13 @@ export default function CreateCommunityPage() {
               <Label className="text-sm font-medium text-[#0a0a0a] mb-2 block">Ícone / Avatar</Label>
               <div className="flex items-center gap-4">
                 <div
-                  className="w-16 h-16 rounded-2xl border-2 border-dashed border-[#e5e5e5] overflow-hidden cursor-pointer hover:border-[#1db954] transition-colors flex items-center justify-center group"
+                  className="w-16 h-16 rounded-2xl border-2 border-dashed border-[#e5e5e5] overflow-hidden cursor-pointer hover:border-[#09090b] transition-colors flex items-center justify-center group"
                   onClick={() => avatarRef.current?.click()}
                 >
                   {form.avatarPreview ? (
                     <img src={form.avatarPreview} alt="Avatar" className="w-full h-full object-cover" />
                   ) : (
-                    <ImagePlus className="w-6 h-6 text-[#a3a3a3] group-hover:text-[#1db954] transition-colors" />
+                    <ImagePlus className="w-6 h-6 text-[#a3a3a3] group-hover:text-[#09090b] transition-colors" />
                   )}
                   <input
                     ref={avatarRef}
@@ -232,7 +232,7 @@ export default function CreateCommunityPage() {
                 value={form.description}
                 onChange={(e) => setForm({ ...form, description: e.target.value })}
                 placeholder="Descreva sua comunidade em poucas palavras..."
-                className="w-full h-24 px-4 py-3 rounded-xl border border-[#e5e5e5] text-sm text-[#0a0a0a] placeholder:text-[#a3a3a3] outline-none focus:border-[#1db954] resize-none transition-colors"
+                className="w-full h-24 px-4 py-3 rounded-xl border border-[#e5e5e5] text-sm text-[#0a0a0a] placeholder:text-[#a3a3a3] outline-none focus:border-[#09090b] resize-none transition-colors"
                 maxLength={200}
               />
               <p className="text-xs text-[#a3a3a3] text-right mt-1">{form.description.length}/200</p>
@@ -318,20 +318,20 @@ export default function CreateCommunityPage() {
                   onClick={() => setForm({ ...form, plan: opt.value })}
                   className={`relative flex flex-col gap-3 p-5 rounded-2xl border text-left transition-all ${
                     form.plan === opt.value
-                      ? "border-[#1db954] bg-[#f0fdf4]"
+                      ? "border-[#09090b] bg-[#f4f4f5]"
                       : "border-[#e5e5e5] bg-white hover:border-[#d4d4d4]"
                   }`}
                 >
                   {opt.badge && (
-                    <span className="absolute top-3 right-3 bg-[#1db954] text-white text-[10px] font-bold px-2 py-0.5 rounded-full">
+                    <span className="absolute top-3 right-3 bg-[#09090b] text-white text-[10px] font-bold px-2 py-0.5 rounded-full">
                       {opt.badge}
                     </span>
                   )}
                   <div
                     className="w-10 h-10 rounded-xl flex items-center justify-center"
-                    style={{ background: form.plan === opt.value ? "#1db95420" : "#f5f5f5" }}
+                    style={{ background: form.plan === opt.value ? "#09090b20" : "#f5f5f5" }}
                   >
-                    <opt.icon className="w-5 h-5 text-[#1db954]" />
+                    <opt.icon className="w-5 h-5 text-[#09090b]" />
                   </div>
                   <div>
                     <p className="text-sm font-bold text-[#0a0a0a]">{opt.title}</p>
@@ -382,12 +382,12 @@ export default function CreateCommunityPage() {
                 style={{
                   background: form.coverPreview
                     ? `url(${form.coverPreview}) center/cover`
-                    : "linear-gradient(135deg, #0a0a0a 0%, #1db954 100%)",
+                    : "linear-gradient(135deg, #0a0a0a 0%, #09090b 100%)",
                 }}
               />
               <div className="p-4">
                 <div className="flex items-start gap-3 -mt-8 mb-3">
-                  <div className="w-14 h-14 rounded-xl border-4 border-white shadow-md overflow-hidden bg-[#1db954] flex items-center justify-center">
+                  <div className="w-14 h-14 rounded-xl border-4 border-white shadow-md overflow-hidden bg-[#09090b] flex items-center justify-center">
                     {form.avatarPreview ? (
                       <img src={form.avatarPreview} alt="Avatar" className="w-full h-full object-cover" />
                     ) : (
@@ -405,7 +405,7 @@ export default function CreateCommunityPage() {
                   )}
                   <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
                     form.plan === "free"
-                      ? "bg-[#f0fdf4] text-[#1db954]"
+                      ? "bg-[#f4f4f5] text-[#09090b]"
                       : "bg-[#fef3c7] text-[#d97706]"
                   }`}>
                     {form.plan === "free" ? "Grátis" : `R$ ${form.price}/mês`}
@@ -414,9 +414,9 @@ export default function CreateCommunityPage() {
               </div>
             </div>
 
-            <div className="flex items-start gap-3 p-4 bg-[#f0fdf4] rounded-xl border border-[#1db954]/20">
-              <Check className="w-5 h-5 text-[#1db954] shrink-0 mt-0.5" />
-              <p className="text-sm text-[#166534]">
+            <div className="flex items-start gap-3 p-4 bg-[#f4f4f5] rounded-xl border border-[#09090b]/20">
+              <Check className="w-5 h-5 text-[#09090b] shrink-0 mt-0.5" />
+              <p className="text-sm text-[#27272a]">
                 Sua comunidade será criada imediatamente e você poderá personalizar tudo em seguida.
               </p>
             </div>
@@ -448,7 +448,7 @@ export default function CreateCommunityPage() {
             <Link href="/dashboard">
               <Button
                 className="rounded-xl font-bold px-6"
-                style={{ background: "#1db954", color: "white" }}
+                style={{ background: "#09090b", color: "white" }}
               >
                 Criar comunidade 🚀
               </Button>

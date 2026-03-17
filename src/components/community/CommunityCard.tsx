@@ -51,7 +51,7 @@ export default function CommunityCard({ community }: CommunityCardProps) {
               height={40}
             />
             <div className="min-w-0">
-              <h3 className="font-semibold text-sm text-foreground leading-tight line-clamp-1 group-hover:text-primary transition-colors">
+              <h3 className="font-semibold text-sm text-foreground leading-tight line-clamp-1 group-hover:text-[#09090b] transition-colors">
                 {community.name}
               </h3>
               <p className="text-xs text-muted-foreground mt-0.5">{community.owner}</p>
@@ -74,7 +74,7 @@ export default function CommunityCard({ community }: CommunityCardProps) {
               className={
                 community.price === 0
                   ? "bg-secondary text-secondary-foreground border-0 text-xs font-semibold"
-                  : "bg-primary/10 text-primary border-0 text-xs font-semibold"
+                  : "bg-[#09090b]/10 text-[#09090b] border-0 text-xs font-semibold"
               }
             >
               {community.price === 0 ? "Grátis" : `R$ ${community.price}/mês`}

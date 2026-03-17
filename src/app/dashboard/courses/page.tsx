@@ -126,7 +126,7 @@ export default function CoursesPage() {
               <item.icon className="w-4 h-4 shrink-0" />
               <span className="flex-1">{item.label}</span>
               {item.badge && (
-                <span className="w-5 h-5 rounded-full bg-[#1db954] text-white text-[10px] font-bold flex items-center justify-center">
+                <span className="w-5 h-5 rounded-full bg-[#09090b] text-white text-[10px] font-bold flex items-center justify-center">
                   {item.badge}
                 </span>
               )}
@@ -140,7 +140,7 @@ export default function CoursesPage() {
               <AvatarFallback className="text-sm font-bold">{user.fullName[0]}</AvatarFallback>
             </Avatar>
             <div className="flex-1 min-w-0">
-              <p className="text-sm font-semibold text-[#0a0a0a] truncate group-hover:text-[#1db954] transition-colors">
+              <p className="text-sm font-semibold text-[#0a0a0a] truncate group-hover:text-[#09090b] transition-colors">
                 {user.fullName}
               </p>
               <p className="text-xs text-[#a3a3a3]">Nível {user.level}</p>
@@ -179,7 +179,7 @@ export default function CoursesPage() {
                 {[
                   { label: "Total", value: ALL_COURSES.length, icon: BookOpen, color: "#3b82f6", bg: "#eff6ff" },
                   { label: "Em andamento", value: activeCount, icon: Play, color: "#f59e0b", bg: "#fffbeb" },
-                  { label: "Concluídos", value: doneCount, icon: CheckCircle2, color: "#1db954", bg: "#f0fdf4" },
+                  { label: "Concluídos", value: doneCount, icon: CheckCircle2, color: "#09090b", bg: "#f4f4f5" },
                 ].map((s) => (
                   <div key={s.label} className="bg-white rounded-2xl border border-[#e5e5e5] p-4">
                     <div className="w-9 h-9 rounded-xl flex items-center justify-center mb-3" style={{ background: s.bg }}>
@@ -207,16 +207,16 @@ export default function CoursesPage() {
                       </div>
                     </div>
                     <div className="flex-1 min-w-0">
-                      <Badge className="bg-[#1db954]/20 text-[#1db954] border-0 text-[10px] mb-1">Continuar</Badge>
+                      <Badge className="bg-[#09090b]/20 text-[#09090b] border-0 text-[10px] mb-1">Continuar</Badge>
                       <h3 className="text-white font-bold text-sm mb-2 line-clamp-1">{c.title}</h3>
                       <div className="flex items-center gap-3">
                         <div className="flex-1 h-1.5 bg-white/10 rounded-full overflow-hidden">
-                          <div className="h-full bg-[#1db954] rounded-full" style={{ width: `${c.progress}%` }} />
+                          <div className="h-full bg-[#09090b] rounded-full" style={{ width: `${c.progress}%` }} />
                         </div>
-                        <span className="text-xs font-bold text-[#1db954] shrink-0">{c.progress}%</span>
+                        <span className="text-xs font-bold text-[#09090b] shrink-0">{c.progress}%</span>
                       </div>
                     </div>
-                    <button className="shrink-0 px-5 py-2.5 bg-[#1db954] text-white text-sm font-bold rounded-xl hover:bg-[#17a347] transition-colors flex items-center gap-2">
+                    <button className="shrink-0 px-5 py-2.5 bg-[#09090b] text-white text-sm font-bold rounded-xl hover:bg-[#17a347] transition-colors flex items-center gap-2">
                       Continuar
                       <ChevronRight className="w-4 h-4" />
                     </button>
@@ -260,7 +260,7 @@ export default function CoursesPage() {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                       {course.progress === 100 && (
                         <div className="absolute top-3 right-3">
-                          <div className="w-8 h-8 rounded-full bg-[#1db954] flex items-center justify-center shadow-lg">
+                          <div className="w-8 h-8 rounded-full bg-[#09090b] flex items-center justify-center shadow-lg">
                             <CheckCircle2 className="w-4 h-4 text-white" />
                           </div>
                         </div>
@@ -274,7 +274,7 @@ export default function CoursesPage() {
                       )}
                       {course.free && (
                         <div className="absolute top-3 left-3">
-                          <span className="px-2 py-0.5 rounded-full bg-[#1db954] text-white text-[10px] font-bold">
+                          <span className="px-2 py-0.5 rounded-full bg-[#09090b] text-white text-[10px] font-bold">
                             Grátis
                           </span>
                         </div>
@@ -299,8 +299,8 @@ export default function CoursesPage() {
                           <Clock className="w-3.5 h-3.5" />{course.duration}
                         </span>
                         {course.progress === 100 && (
-                          <span className="ml-auto flex items-center gap-1 text-[#1db954] font-medium">
-                            <Star className="w-3 h-3 fill-[#1db954]" />Concluído
+                          <span className="ml-auto flex items-center gap-1 text-[#09090b] font-medium">
+                            <Star className="w-3 h-3 fill-[#09090b]" />Concluído
                           </span>
                         )}
                       </div>
@@ -317,7 +317,7 @@ export default function CoursesPage() {
                               className="h-full rounded-full transition-all"
                               style={{
                                 width: `${course.progress}%`,
-                                background: course.progress === 100 ? "#1db954" : "#0a0a0a",
+                                background: course.progress === 100 ? "#09090b" : "#0a0a0a",
                               }}
                             />
                           </div>
@@ -346,7 +346,7 @@ export default function CoursesPage() {
                       <circle cx="18" cy="18" r="15.9155" fill="none" stroke="#f5f5f5" strokeWidth="3" />
                       <circle
                         cx="18" cy="18" r="15.9155" fill="none"
-                        stroke="#1db954" strokeWidth="3"
+                        stroke="#09090b" strokeWidth="3"
                         strokeDasharray={`${totalProgress} ${100 - totalProgress}`}
                         strokeLinecap="round"
                       />
@@ -362,8 +362,8 @@ export default function CoursesPage() {
                     <p className="text-lg font-extrabold text-[#0a0a0a]">{activeCount}</p>
                     <p className="text-[10px] text-[#a3a3a3]">Em andamento</p>
                   </div>
-                  <div className="bg-[#f0fdf4] rounded-xl p-3 text-center">
-                    <p className="text-lg font-extrabold text-[#1db954]">{doneCount}</p>
+                  <div className="bg-[#f4f4f5] rounded-xl p-3 text-center">
+                    <p className="text-lg font-extrabold text-[#09090b]">{doneCount}</p>
                     <p className="text-[10px] text-[#a3a3a3]">Concluídos</p>
                   </div>
                 </div>
@@ -400,13 +400,13 @@ export default function CoursesPage() {
                 </h3>
                 <div className="space-y-2">
                   {ALL_COURSES.filter((c) => c.progress === 100).map((c) => (
-                    <div key={c.id} className="flex items-center gap-3 p-3 bg-[#f0fdf4] rounded-xl">
-                      <CheckCircle2 className="w-5 h-5 text-[#1db954] shrink-0" />
+                    <div key={c.id} className="flex items-center gap-3 p-3 bg-[#f4f4f5] rounded-xl">
+                      <CheckCircle2 className="w-5 h-5 text-[#09090b] shrink-0" />
                       <div className="flex-1 min-w-0">
                         <p className="text-xs font-semibold text-[#0a0a0a] truncate">{c.title}</p>
-                        <p className="text-[10px] text-[#1db954]">Certificado disponível</p>
+                        <p className="text-[10px] text-[#09090b]">Certificado disponível</p>
                       </div>
-                      <ChevronRight className="w-4 h-4 text-[#1db954]" />
+                      <ChevronRight className="w-4 h-4 text-[#09090b]" />
                     </div>
                   ))}
                   {ALL_COURSES.filter((c) => c.progress === 100).length === 0 && (

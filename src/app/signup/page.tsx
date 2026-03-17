@@ -47,7 +47,7 @@ export default function SignupPage() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 relative z-10">
           <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="32" height="32" rx="8" fill="#1db954"/>
+            <rect width="32" height="32" rx="8" fill="#09090b"/>
             <path d="M8 20L14 14L18 18L24 12" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
             <circle cx="8" cy="20" r="2" fill="white"/>
             <circle cx="24" cy="12" r="2" fill="white"/>
@@ -60,9 +60,9 @@ export default function SignupPage() {
         {/* Main content */}
         <div className="relative z-10 space-y-8">
           <div>
-            <div className="inline-flex items-center gap-2 bg-[#1db954]/20 border border-[#1db954]/30 rounded-full px-4 py-2 mb-6">
-              <div className="w-2 h-2 rounded-full bg-[#1db954] animate-pulse" />
-              <span className="text-[#1db954] text-xs font-semibold">Gratuito para começar</span>
+            <div className="inline-flex items-center gap-2 bg-[#09090b]/20 border border-[#09090b]/30 rounded-full px-4 py-2 mb-6">
+              <div className="w-2 h-2 rounded-full bg-[#09090b] animate-pulse" />
+              <span className="text-[#09090b] text-xs font-semibold">Gratuito para começar</span>
             </div>
             <h2
               className="text-4xl font-extrabold text-white leading-[1.15] tracking-tight"
@@ -70,7 +70,7 @@ export default function SignupPage() {
             >
               Comece a construir
               <br />
-              <span className="text-[#1db954]">sua comunidade</span>
+              <span className="text-[#09090b]">sua comunidade</span>
               <br />
               hoje mesmo.
             </h2>
@@ -83,8 +83,8 @@ export default function SignupPage() {
           <div className="space-y-3">
             {benefits.map((benefit) => (
               <div key={benefit} className="flex items-center gap-3">
-                <div className="w-5 h-5 rounded-full bg-[#1db954]/20 border border-[#1db954]/40 flex items-center justify-center flex-shrink-0">
-                  <Check className="w-3 h-3 text-[#1db954]" />
+                <div className="w-5 h-5 rounded-full bg-[#09090b]/20 border border-[#09090b]/40 flex items-center justify-center flex-shrink-0">
+                  <Check className="w-3 h-3 text-[#09090b]" />
                 </div>
                 <span className="text-white/70 text-sm">{benefit}</span>
               </div>
@@ -151,7 +151,7 @@ export default function SignupPage() {
               </h1>
               <p className="text-[#737373] text-sm">
                 Já tem uma conta?{" "}
-                <Link href="/login" className="text-[#1db954] font-semibold hover:text-[#16a34a] transition-colors">
+                <Link href="/login" className="text-[#09090b] font-semibold hover:text-[#27272a] transition-colors">
                   Entrar
                 </Link>
               </p>
@@ -192,7 +192,7 @@ export default function SignupPage() {
                   id="name"
                   type="text"
                   placeholder="Seu nome"
-                  className="h-11 rounded-xl border-[#e5e5e5] bg-white text-[#0a0a0a] placeholder:text-[#a3a3a3] focus:border-[#1db954] focus:ring-[#1db954]/20"
+                  className="h-11 rounded-xl border-[#e5e5e5] bg-white text-[#0a0a0a] placeholder:text-[#a3a3a3] focus:border-[#09090b] focus:ring-[#09090b]/20"
                 />
               </div>
 
@@ -204,7 +204,7 @@ export default function SignupPage() {
                   id="email"
                   type="email"
                   placeholder="seu@email.com"
-                  className="h-11 rounded-xl border-[#e5e5e5] bg-white text-[#0a0a0a] placeholder:text-[#a3a3a3] focus:border-[#1db954] focus:ring-[#1db954]/20"
+                  className="h-11 rounded-xl border-[#e5e5e5] bg-white text-[#0a0a0a] placeholder:text-[#a3a3a3] focus:border-[#09090b] focus:ring-[#09090b]/20"
                 />
               </div>
 
@@ -217,7 +217,7 @@ export default function SignupPage() {
                     id="password"
                     type={showPassword ? "text" : "password"}
                     placeholder="Mínimo 8 caracteres"
-                    className="h-11 rounded-xl border-[#e5e5e5] bg-white text-[#0a0a0a] placeholder:text-[#a3a3a3] focus:border-[#1db954] focus:ring-[#1db954]/20 pr-11"
+                    className="h-11 rounded-xl border-[#e5e5e5] bg-white text-[#0a0a0a] placeholder:text-[#a3a3a3] focus:border-[#09090b] focus:ring-[#09090b]/20 pr-11"
                   />
                   <button
                     type="button"
@@ -232,7 +232,7 @@ export default function SignupPage() {
               <Link href="/dashboard">
                 <Button
                   className="w-full h-12 rounded-xl mt-2 font-semibold text-base"
-                  style={{ background: "#1db954", color: "white" }}
+                  style={{ background: "#09090b", color: "white" }}
                 >
                   Criar conta grátis
                 </Button>

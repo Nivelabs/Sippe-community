@@ -29,13 +29,13 @@ export default function UserMenu() {
       <div className="flex items-center gap-3">
         <Link
           href="/login"
-          className="px-4 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors"
+          className="px-4 py-2 text-sm font-medium text-foreground hover:text-[#09090b] transition-colors"
         >
           Entrar
         </Link>
         <Link
           href="/login?tab=signup"
-          className="px-4 py-2 bg-primary text-white rounded-full text-sm font-semibold hover:bg-brand-dark transition-colors"
+          className="px-4 py-2 bg-[#09090b] text-white rounded-full text-sm font-semibold hover:bg-brand-dark transition-colors"
         >
           Começar grátis
         </Link>
@@ -52,7 +52,7 @@ export default function UserMenu() {
       <DropdownMenuTrigger className="flex items-center gap-2 hover:opacity-80 transition-opacity">
         <Avatar className="w-9 h-9">
           <AvatarImage src={avatarUrl} alt={displayName} />
-          <AvatarFallback className="bg-primary text-white text-sm font-semibold">
+          <AvatarFallback className="bg-[#09090b] text-white text-sm font-semibold">
             {getInitials(displayName)}
           </AvatarFallback>
         </Avatar>

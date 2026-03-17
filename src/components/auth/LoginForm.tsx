@@ -61,7 +61,7 @@ export default function LoginForm() {
       <button
         type="submit"
         disabled={loading}
-        className="w-full px-6 py-3 bg-primary text-white rounded-full font-semibold hover:bg-brand-dark transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+        className="w-full px-6 py-3 bg-[#09090b] text-white rounded-full font-semibold hover:bg-brand-dark transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
       >
         {loading && <Loader2 className="w-4 h-4 animate-spin" />}
         {loading ? 'Entrando...' : 'Entrar'}

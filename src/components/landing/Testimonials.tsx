@@ -12,7 +12,7 @@ export default function Testimonials() {
       <div className="container-narrow">
         {/* Header */}
         <div className="text-center mb-14">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-secondary text-primary text-sm font-semibold mb-4">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-secondary text-[#09090b] text-sm font-semibold mb-4">
             Depoimentos
           </span>
           <h2
@@ -20,7 +20,7 @@ export default function Testimonials() {
             style={{ fontFamily: "var(--font-jakarta)" }}
           >
             Criadores que{" "}
-            <span className="text-primary">já confiam</span> no Sippe
+            <span className="text-[#09090b]">já confiam</span> no Sippe
           </h2>
           <p className="text-muted-foreground text-lg">
             Histórias reais de pessoas que construíram comunidades incríveis.
@@ -35,14 +35,14 @@ export default function Testimonials() {
               className="bg-muted rounded-3xl p-6 border border-border flex flex-col relative"
             >
               {/* Quote icon */}
-              <div className="absolute top-5 right-5 text-primary/10">
+              <div className="absolute top-5 right-5 text-[#09090b]/10">
                 <Quote className="w-10 h-10 fill-current" />
               </div>
 
               {/* Stars */}
               <div className="flex gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-primary text-primary" />
+                  <Star key={i} className="w-4 h-4 fill-primary text-[#09090b]" />
                 ))}
               </div>
 
@@ -67,7 +67,7 @@ export default function Testimonials() {
                   <p className="text-xs text-muted-foreground">{t.role}</p>
                 </div>
                 <div className="text-right shrink-0">
-                  <p className="text-xs font-bold text-primary">
+                  <p className="text-xs font-bold text-[#09090b]">
                     {formatMembers(t.members)} membros
                   </p>
                   <p className="text-xs text-muted-foreground">{t.community}</p>

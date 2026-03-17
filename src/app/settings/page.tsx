@@ -41,7 +41,7 @@ function Toggle({ checked, onChange }: { checked: boolean; onChange: (v: boolean
       aria-checked={checked}
       onClick={() => onChange(!checked)}
       className={`relative inline-flex w-11 h-6 rounded-full transition-colors shrink-0 ${
-        checked ? "bg-[#1db954]" : "bg-[#d4d4d4]"
+        checked ? "bg-[#09090b]" : "bg-[#d4d4d4]"
       }`}
     >
       <span
@@ -210,7 +210,7 @@ export default function SettingsPage() {
                     <div>
                       <p className="text-sm font-semibold text-[#0a0a0a]">{user.fullName}</p>
                       <p className="text-xs text-[#a3a3a3] mb-2">@{user.username}</p>
-                      <button className="text-xs font-medium text-[#1db954] hover:underline">
+                      <button className="text-xs font-medium text-[#09090b] hover:underline">
                         Alterar foto
                       </button>
                     </div>
@@ -241,7 +241,7 @@ export default function SettingsPage() {
                       <textarea
                         value={profileForm.bio}
                         onChange={(e) => setProfileForm({ ...profileForm, bio: e.target.value })}
-                        className="w-full h-20 px-4 py-3 rounded-xl border border-[#e5e5e5] text-sm text-[#0a0a0a] outline-none focus:border-[#1db954] resize-none transition-colors"
+                        className="w-full h-20 px-4 py-3 rounded-xl border border-[#e5e5e5] text-sm text-[#0a0a0a] outline-none focus:border-[#09090b] resize-none transition-colors"
                         maxLength={200}
                       />
                     </div>
@@ -269,7 +269,7 @@ export default function SettingsPage() {
                     <Button
                       onClick={handleSave}
                       className="rounded-xl px-6 font-semibold gap-2"
-                      style={{ background: saved ? "#1db954" : "#0a0a0a", color: "white" }}
+                      style={{ background: saved ? "#09090b" : "#0a0a0a", color: "white" }}
                     >
                       {saved ? (
                         <>
@@ -323,7 +323,7 @@ export default function SettingsPage() {
                     <Button
                       onClick={handleSave}
                       className="rounded-xl px-6 font-semibold gap-2"
-                      style={{ background: saved ? "#1db954" : "#0a0a0a", color: "white" }}
+                      style={{ background: saved ? "#09090b" : "#0a0a0a", color: "white" }}
                     >
                       {saved ? <><Check className="w-4 h-4" /> Salvo!</> : "Salvar"}
                     </Button>
@@ -347,7 +347,7 @@ export default function SettingsPage() {
                       </div>
                     </SettingRow>
                     <SettingRow title="App móvel" desc="Baixar o app do Sippe">
-                      <div className="flex items-center gap-2 text-sm text-[#1db954]">
+                      <div className="flex items-center gap-2 text-sm text-[#09090b]">
                         <Smartphone className="w-4 h-4" />
                         <span className="font-medium">Em breve</span>
                       </div>

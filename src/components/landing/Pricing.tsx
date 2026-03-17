@@ -19,7 +19,7 @@ export default function Pricing() {
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-secondary text-primary text-sm font-semibold mb-4">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-secondary text-[#09090b] text-sm font-semibold mb-4">
             Preços
           </span>
           <h2
@@ -27,7 +27,7 @@ export default function Pricing() {
             style={{ fontFamily: "var(--font-jakarta)" }}
           >
             Comece de graça,{" "}
-            <span className="text-primary">cresça sem limites</span>
+            <span className="text-[#09090b]">cresça sem limites</span>
           </h2>
           <p className="text-muted-foreground text-lg">
             Sem taxas surpresa. Cancele quando quiser.
@@ -51,7 +51,7 @@ export default function Pricing() {
               whileHover={{ y: -8, transition: { duration: 0.2 } }}
               className={`relative rounded-3xl p-6 flex flex-col transition-shadow duration-300 ${
                 plan.featured
-                  ? "bg-primary text-white shadow-2xl shadow-primary/40 scale-105 z-10"
+                  ? "bg-[#09090b] text-white shadow-2xl shadow-primary/40 scale-105 z-10"
                   : "bg-white border border-border hover:shadow-xl"
               }`}
             >
@@ -61,7 +61,7 @@ export default function Pricing() {
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ delay: 0.6, type: "spring", bounce: 0.5 }}
-                    className="inline-block px-4 py-1 rounded-full bg-white text-primary text-xs font-bold shadow-md"
+                    className="inline-block px-4 py-1 rounded-full bg-white text-[#09090b] text-xs font-bold shadow-md"
                   >
                     Mais popular ⚡
                   </motion.span>
@@ -134,7 +134,7 @@ export default function Pricing() {
                       }`}
                     >
                       <Check
-                        className={`w-3 h-3 ${plan.featured ? "text-white" : "text-primary"}`}
+                        className={`w-3 h-3 ${plan.featured ? "text-white" : "text-[#09090b]"}`}
                         strokeWidth={2.5}
                       />
                     </div>
@@ -152,8 +152,8 @@ export default function Pricing() {
                   whileTap={{ scale: 0.95 }}
                   className={`w-full py-3 px-6 rounded-full font-bold text-sm transition-colors ${
                     plan.featured
-                      ? "bg-white text-primary hover:bg-green-50 shadow-md"
-                      : "bg-primary text-white hover:bg-brand-dark shadow-sm"
+                      ? "bg-white text-[#09090b] hover:bg-green-50 shadow-md"
+                      : "bg-[#09090b] text-white hover:bg-brand-dark shadow-sm"
                   }`}
                 >
                   {plan.cta}

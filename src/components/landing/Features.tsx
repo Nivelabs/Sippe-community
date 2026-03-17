@@ -25,7 +25,7 @@ export default function Features() {
           transition={{ duration: 0.5 }}
           className="text-center mb-14"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-secondary text-primary text-sm font-semibold mb-4">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-secondary text-[#09090b] text-sm font-semibold mb-4">
             Tudo que você precisa
           </span>
           <h2
@@ -33,7 +33,7 @@ export default function Features() {
             style={{ fontFamily: "var(--font-jakarta)" }}
           >
             Uma plataforma,{" "}
-            <span className="text-primary">infinitas possibilidades</span>
+            <span className="text-[#09090b]">infinitas possibilidades</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Do feed de comunidade até cursos online, eventos e gamificação — tudo
@@ -53,10 +53,10 @@ export default function Features() {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -5 }}
-                className="bg-white rounded-2xl p-6 border border-border hover:border-primary/30 hover:shadow-xl transition-all duration-300 group"
+                className="bg-white rounded-2xl p-6 border border-border hover:border-[#09090b]/30 hover:shadow-xl transition-all duration-300 group"
               >
-                <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center mb-4 group-hover:bg-primary/10 transition-colors">
-                  <Icon className="w-6 h-6 text-primary" />
+                <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center mb-4 group-hover:bg-[#09090b]/10 transition-colors">
+                  <Icon className="w-6 h-6 text-[#09090b]" />
                 </div>
                 <h3
                   className="text-lg font-bold text-foreground mb-2"
@@ -78,7 +78,7 @@ export default function Features() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, type: "spring" }}
-          className="mt-12 rounded-3xl bg-gradient-to-br from-primary to-brand-dark p-8 lg:p-12 text-white flex flex-col lg:flex-row items-center justify-between gap-6 relative overflow-hidden"
+          className="mt-12 rounded-3xl bg-gradient-to-br from-[#09090b] to-[#27272a] p-8 lg:p-12 text-white flex flex-col lg:flex-row items-center justify-between gap-6 relative overflow-hidden"
         >
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
 
@@ -97,7 +97,7 @@ export default function Features() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             href="/signup"
-            className="relative z-10 shrink-0 inline-flex items-center gap-2 bg-white text-primary font-bold px-8 py-3.5 rounded-full hover:bg-green-50 transition-colors text-base shadow-xl"
+            className="relative z-10 shrink-0 inline-flex items-center gap-2 bg-white text-[#09090b] font-bold px-8 py-3.5 rounded-full hover:bg-green-50 transition-colors text-base shadow-xl"
           >
             Criar comunidade grátis
           </motion.a>

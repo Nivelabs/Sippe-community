@@ -105,8 +105,8 @@ export default function CommunityPage({
                     onClick={() => setJoined(!joined)}
                     className={`shrink-0 px-6 py-2.5 rounded-full font-bold text-sm transition-colors ${
                       joined
-                        ? "bg-secondary text-secondary-foreground border border-primary/30 hover:bg-primary/10"
-                        : "bg-primary text-white hover:bg-brand-dark shadow-sm"
+                        ? "bg-secondary text-secondary-foreground border border-[#09090b]/30 hover:bg-[#09090b]/10"
+                        : "bg-[#09090b] text-white hover:bg-brand-dark shadow-sm"
                     }`}
                   >
                     {joined ? "✓ Membro" : "Participar"}
@@ -142,7 +142,7 @@ export default function CommunityPage({
                     className={
                       community.price === 0
                         ? "bg-secondary text-secondary-foreground border-0 text-xs"
-                        : "bg-primary/10 text-primary border-0 text-xs"
+                        : "bg-[#09090b]/10 text-[#09090b] border-0 text-xs"
                     }
                   >
                     {community.price === 0
@@ -171,7 +171,7 @@ export default function CommunityPage({
                   <TabsTrigger
                     key={tab}
                     value={tab}
-                    className="flex-1 sm:flex-none rounded-lg text-sm font-medium data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-sm"
+                    className="flex-1 sm:flex-none rounded-lg text-sm font-medium data-[state=active]:bg-[#09090b] data-[state=active]:text-white data-[state=active]:shadow-sm"
                   >
                     {labels[tab]}
                   </TabsTrigger>
@@ -186,7 +186,7 @@ export default function CommunityPage({
                   {/* New post composer */}
                   <div className="bg-white rounded-2xl border border-border p-4">
                     <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-full bg-secondary flex items-center justify-center text-primary font-bold text-sm">
+                      <div className="w-9 h-9 rounded-full bg-secondary flex items-center justify-center text-[#09090b] font-bold text-sm">
                         V
                       </div>
                       <input
@@ -195,7 +195,7 @@ export default function CommunityPage({
                       />
                     </div>
                     <div className="flex justify-end mt-3">
-                      <button className="px-5 py-2 bg-primary text-white rounded-full text-sm font-semibold hover:bg-brand-dark transition-colors">
+                      <button className="px-5 py-2 bg-[#09090b] text-white rounded-full text-sm font-semibold hover:bg-brand-dark transition-colors">
                         Publicar
                       </button>
                     </div>
@@ -257,11 +257,11 @@ export default function CommunityPage({
                               />
                               {post.likes + (likedPosts.has(post.id) ? 1 : 0)}
                             </button>
-                            <button className="flex items-center gap-1.5 text-xs font-medium text-muted-foreground hover:text-primary transition-colors">
+                            <button className="flex items-center gap-1.5 text-xs font-medium text-muted-foreground hover:text-[#09090b] transition-colors">
                               <MessageCircle className="w-4 h-4" />
                               {post.comments}
                             </button>
-                            <button className="flex items-center gap-1.5 text-xs font-medium text-muted-foreground hover:text-primary transition-colors ml-auto">
+                            <button className="flex items-center gap-1.5 text-xs font-medium text-muted-foreground hover:text-[#09090b] transition-colors ml-auto">
                               <Share2 className="w-4 h-4" />
                               Compartilhar
                             </button>
@@ -287,7 +287,7 @@ export default function CommunityPage({
                           <AvatarFallback className="text-xs">{m.name[0]}</AvatarFallback>
                         </Avatar>
                       ))}
-                      <div className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center text-xs font-semibold text-primary">
+                      <div className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center text-xs font-semibold text-[#09090b]">
                         +{community.online - 6}
                       </div>
                     </div>
@@ -296,7 +296,7 @@ export default function CommunityPage({
                   {/* Top leaderboard */}
                   <div className="bg-white rounded-2xl border border-border p-4">
                     <h3 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-1.5">
-                      <Trophy className="w-4 h-4 text-primary" />
+                      <Trophy className="w-4 h-4 text-[#09090b]" />
                       Top membros
                     </h3>
                     <div className="space-y-3">
@@ -312,7 +312,7 @@ export default function CommunityPage({
                           <span className="text-xs font-medium text-foreground flex-1 truncate">
                             {m.name}
                           </span>
-                          <span className="text-xs font-bold text-primary">
+                          <span className="text-xs font-bold text-[#09090b]">
                             {m.points.toLocaleString()}
                           </span>
                         </div>
@@ -341,7 +341,7 @@ export default function CommunityPage({
                       />
                       <div className="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                         <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-lg">
-                          <Play className="w-5 h-5 text-primary fill-primary" />
+                          <Play className="w-5 h-5 text-[#09090b] fill-primary" />
                         </div>
                       </div>
                       {!course.free && (
@@ -353,7 +353,7 @@ export default function CommunityPage({
                       )}
                       {course.free && (
                         <div className="absolute top-2 left-2">
-                          <span className="px-2 py-0.5 rounded-full bg-primary text-white text-xs font-bold">
+                          <span className="px-2 py-0.5 rounded-full bg-[#09090b] text-white text-xs font-bold">
                             Grátis
                           </span>
                         </div>
@@ -387,7 +387,7 @@ export default function CommunityPage({
               <div className="bg-white rounded-2xl border border-border overflow-hidden">
                 <div className="p-4 border-b border-border flex items-center justify-between">
                   <h3 className="font-semibold text-foreground flex items-center gap-2">
-                    <Trophy className="w-4 h-4 text-primary" />
+                    <Trophy className="w-4 h-4 text-[#09090b]" />
                     Leaderboard
                   </h3>
                   <div className="flex gap-2">
@@ -396,7 +396,7 @@ export default function CommunityPage({
                         key={p}
                         className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${
                           p === "Esta semana"
-                            ? "bg-primary text-white"
+                            ? "bg-[#09090b] text-white"
                             : "bg-muted text-muted-foreground hover:text-foreground"
                         }`}
                       >
@@ -448,7 +448,7 @@ export default function CommunityPage({
                         </div>
                       </div>
                       <div className="text-right shrink-0">
-                        <p className="text-sm font-bold text-primary">
+                        <p className="text-sm font-bold text-[#09090b]">
                           {member.points.toLocaleString()}
                         </p>
                         <p className="text-xs text-muted-foreground">pontos</p>
@@ -508,7 +508,7 @@ export default function CommunityPage({
                       <div className="flex items-center justify-between mt-4">
                         <div className="flex items-center gap-4 text-sm text-muted-foreground">
                           <span className="flex items-center gap-1.5 font-medium text-foreground">
-                            <Calendar className="w-4 h-4 text-primary" />
+                            <Calendar className="w-4 h-4 text-[#09090b]" />
                             {event.date}
                           </span>
                           <span className="flex items-center gap-1">
@@ -520,7 +520,7 @@ export default function CommunityPage({
                             {event.attendees}
                           </span>
                         </div>
-                        <button className="px-4 py-2 bg-primary text-white rounded-full text-xs font-bold hover:bg-brand-dark transition-colors flex items-center gap-1">
+                        <button className="px-4 py-2 bg-[#09090b] text-white rounded-full text-xs font-bold hover:bg-brand-dark transition-colors flex items-center gap-1">
                           Participar
                           <ChevronRight className="w-3.5 h-3.5" />
                         </button>
@@ -569,7 +569,7 @@ export default function CommunityPage({
                           className="bg-muted rounded-xl p-4 text-center"
                         >
                           <p
-                            className="text-2xl font-extrabold text-primary mb-1"
+                            className="text-2xl font-extrabold text-[#09090b] mb-1"
                             style={{ fontFamily: "var(--font-jakarta)" }}
                           >
                             {value}
