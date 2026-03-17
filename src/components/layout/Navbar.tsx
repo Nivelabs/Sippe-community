@@ -74,10 +74,10 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-2">
             <Link href="/signup">
               <Button
-                className="rounded-full shadow-md shadow-primary/20 bg-primary font-bold px-6 text-primary-foreground hover:bg-primary/90 transition-all hover:scale-105 active:scale-95 group"
+                className="rounded-full shadow-[0_4px_14px_0_rgba(0,0,0,0.1)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.15)] hover:-translate-y-0.5 border border-black/5 bg-[#09090b] text-white font-bold h-10 px-7 transition-all flex items-center gap-1 group"
               >
-                Começar grátis
-                <ChevronRight className="w-4 h-4 ml-1 opacity-70 group-hover:translate-x-1 transition-transform" />
+                Começar agora
+                <ChevronRight className="w-4 h-4 text-white/70 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
           </div>

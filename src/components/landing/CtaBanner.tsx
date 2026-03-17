@@ -6,9 +6,9 @@ import { motion } from "framer-motion";
 
 export default function CtaBanner() {
   return (
-    <section className="section-padding bg-[#111] border-t border-[#222]">
+    <section className="pt-24 pb-8 lg:pt-32 lg:pb-12 bg-[#111] border-t border-[#222]">
       <div className="container-narrow">
-        <div className="relative overflow-hidden rounded-2xl bg-white/5 border border-white/10 px-10 py-16 lg:px-20 lg:py-24 text-center">
+        <div className="relative overflow-hidden rounded-[2.5rem] bg-white/[0.03] border border-white/10 px-6 py-16 lg:px-20 lg:py-28 text-center shadow-2xl">
           {/* Dot-grid texture */}
           <div
             className="absolute inset-0 pointer-events-none opacity-10"

@@ -1,8 +1,8 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/landing/Hero";
+import WhatIsSippe from "@/components/landing/WhatIsSippe";
 import Features from "@/components/landing/Features";
-import CommunitiesShowcase from "@/components/landing/CommunitiesShowcase";
 import Pricing from "@/components/landing/Pricing";
 import Testimonials from "@/components/landing/Testimonials";
 import CtaBanner from "@/components/landing/CtaBanner";
@@ -13,7 +13,7 @@ export default function LandingPage() {
       <Navbar />
       <main>
         <Hero />
-        <CommunitiesShowcase />
+        <WhatIsSippe />
         <Features />
         <Testimonials />
         <Pricing />
