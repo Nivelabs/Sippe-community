@@ -1,5 +1,70 @@
 // Shared mock data types and data for the Sippe Community app
 
+// Type definitions
+export type Community = {
+  id: string;
+  slug: string;
+  name: string;
+  description: string;
+  category: string;
+  members: number;
+  online: number;
+  price: number;
+  owner: string;
+  ownerAvatar: string;
+  avatar: string;
+  cover: string;
+  tags: string[];
+  featured: boolean;
+  rating: number;
+  rank: number;
+};
+
+export type Post = {
+  id: string;
+  author: string;
+  authorAvatar: string;
+  role: string;
+  content: string;
+  image: string | null;
+  likes: number;
+  comments: number;
+  time: string;
+  pinned: boolean;
+};
+
+export type Course = {
+  id: string;
+  title: string;
+  description: string;
+  cover: string;
+  lessons: number;
+  duration: string;
+  free: boolean;
+  progress: number;
+};
+
+export type Member = {
+  id: string;
+  name: string;
+  avatar: string;
+  role: string;
+  points: number;
+  level: number;
+  bio: string;
+};
+
+export type Event = {
+  id: string;
+  title: string;
+  description: string;
+  date: string;
+  time: string;
+  attendees: number;
+  type: string;
+  cover: string;
+};
+
 export const CATEGORIES = [
   "Todos",
   "Tecnologia",
@@ -31,6 +96,7 @@ export const COMMUNITIES = [
     tags: ["IA", "Machine Learning", "Python", "LLMs"],
     featured: true,
     rating: 4.9,
+    rank: 1,
   },
   {
     id: "2",
@@ -49,6 +115,7 @@ export const COMMUNITIES = [
     tags: ["Marketing", "Growth", "SEO", "Funil"],
     featured: true,
     rating: 4.8,
+    rank: 2,
   },
   {
     id: "3",
@@ -67,6 +134,7 @@ export const COMMUNITIES = [
     tags: ["UX", "UI", "Figma", "Design System"],
     featured: false,
     rating: 4.7,
+    rank: 3,
   },
   {
     id: "4",
@@ -85,6 +153,7 @@ export const COMMUNITIES = [
     tags: ["Infoproduto", "Negócios", "Finanças", "Digital"],
     featured: true,
     rating: 4.9,
+    rank: 4,
   },
   {
     id: "5",
@@ -103,6 +172,7 @@ export const COMMUNITIES = [
     tags: ["React", "Node", "TypeScript", "Fullstack"],
     featured: false,
     rating: 4.8,
+    rank: 5,
   },
   {
     id: "6",
@@ -121,6 +191,7 @@ export const COMMUNITIES = [
     tags: ["Saúde", "Treino", "Nutrição", "Bem-estar"],
     featured: false,
     rating: 4.6,
+    rank: 6,
   },
 ];
 
@@ -347,3 +418,130 @@ export const CURRENT_USER = {
     },
   ],
 };
+
+// Features for landing page
+export const FEATURES = [
+  {
+    icon: "users",
+    title: "Comunidade",
+    description:
+      "Feed de posts, comentários, reações e threads. Crie conexões reais entre seus membros.",
+  },
+  {
+    icon: "book-open",
+    title: "Cursos",
+    description:
+      "Crie e venda cursos completos com vídeos, PDFs e quizzes. Tudo integrado na sua comunidade.",
+  },
+  {
+    icon: "calendar",
+    title: "Eventos",
+    description:
+      "Organize lives, webinars e meetups. Integração nativa com Zoom e Google Meet.",
+  },
+  {
+    icon: "trophy",
+    title: "Gamificação",
+    description:
+      "Pontos, badges, níveis e leaderboard. Mantenha seus membros engajados e voltando sempre.",
+  },
+  {
+    icon: "credit-card",
+    title: "Monetização",
+    description:
+      "Planos de assinatura, vendas avulsas e cupons de desconto. Receba direto na sua conta.",
+  },
+  {
+    icon: "bar-chart",
+    title: "Analytics",
+    description:
+      "Dashboards com crescimento de membros, engajamento e receita em tempo real.",
+  },
+];
+
+// Pricing plans for landing page
+export const PRICING_PLANS = [
+  {
+    id: "free",
+    name: "Grátis",
+    price: 0,
+    description: "Para começar sua jornada",
+    features: [
+      "1 comunidade",
+      "Até 100 membros",
+      "Feed de posts",
+      "1 curso gratuito",
+      "Suporte por email",
+    ],
+    cta: "Começar grátis",
+    featured: false,
+  },
+  {
+    id: "pro",
+    name: "Pro",
+    price: 97,
+    description: "Para criadores em crescimento",
+    features: [
+      "Comunidades ilimitadas",
+      "Membros ilimitados",
+      "Cursos ilimitados",
+      "Eventos ao vivo",
+      "Gamificação avançada",
+      "Cobranças e pagamentos",
+      "Suporte prioritário",
+    ],
+    cta: "Começar agora",
+    featured: true,
+  },
+  {
+    id: "enterprise",
+    name: "Enterprise",
+    price: 297,
+    description: "Para grandes operações",
+    features: [
+      "Tudo do Pro",
+      "White-label completo",
+      "API personalizada",
+      "Onboarding dedicado",
+      "SLA garantido",
+      "Gerente de conta",
+      "Relatórios avançados",
+    ],
+    cta: "Falar com vendas",
+    featured: false,
+  },
+];
+
+// Testimonials for landing page
+export const TESTIMONIALS = [
+  {
+    id: "1",
+    name: "Rafael Torres",
+    role: "Fundador, DevLaunch",
+    avatar: "https://i.pravatar.cc/64?u=rafael-torres-t",
+    quote:
+      "Com o Sippe, fui de 0 a 3.200 membros em 4 meses. A plataforma é intuitiva, os membros adoram a experiência e nossa receita dobrou.",
+    community: "Empreendedor Digital",
+    members: 45200,
+  },
+  {
+    id: "2",
+    name: "Fernanda Lima",
+    role: "Investidora & Educadora",
+    avatar: "https://i.pravatar.cc/64?u=fernanda-lima-t",
+    quote:
+      "Nunca pensei que gerenciar uma comunidade seria tão fácil. Os cursos integrados e o sistema de gamificação mantêm meus membros engajados todo dia.",
+    community: "Investidores Brasil",
+    members: 31000,
+  },
+  {
+    id: "3",
+    name: "Lucas Mendes",
+    role: "Engenheiro de IA",
+    avatar: "https://i.pravatar.cc/64?u=lucas-mendes-t",
+    quote:
+      "O Sippe é o que o Skool deveria ter sido desde o início – só que em português, com suporte rápido e uma UX muito mais moderna.",
+    community: "AI Builders Club",
+    members: 12400,
+  },
+];

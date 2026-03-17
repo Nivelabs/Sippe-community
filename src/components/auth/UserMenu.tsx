@@ -49,15 +49,13 @@ export default function UserMenu() {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <button className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-          <Avatar className="w-9 h-9">
-            <AvatarImage src={avatarUrl} alt={displayName} />
-            <AvatarFallback className="bg-primary text-white text-sm font-semibold">
-              {getInitials(displayName)}
-            </AvatarFallback>
-          </Avatar>
-        </button>
+      <DropdownMenuTrigger className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+        <Avatar className="w-9 h-9">
+          <AvatarImage src={avatarUrl} alt={displayName} />
+          <AvatarFallback className="bg-primary text-white text-sm font-semibold">
+            {getInitials(displayName)}
+          </AvatarFallback>
+        </Avatar>
       </DropdownMenuTrigger>
 
       <DropdownMenuContent align="end" className="w-56">
@@ -72,21 +70,21 @@ export default function UserMenu() {
 
         <DropdownMenuSeparator />
 
-        <DropdownMenuItem asChild>
+        <DropdownMenuItem>
           <Link href="/profile" className="cursor-pointer">
             <User className="w-4 h-4 mr-2" />
             Meu perfil
           </Link>
         </DropdownMenuItem>
 
-        <DropdownMenuItem asChild>
+        <DropdownMenuItem>
           <Link href="/communities/new" className="cursor-pointer">
             <Plus className="w-4 h-4 mr-2" />
             Criar comunidade
           </Link>
         </DropdownMenuItem>
 
-        <DropdownMenuItem asChild>
+        <DropdownMenuItem>
           <Link href="/settings" className="cursor-pointer">
             <Settings className="w-4 h-4 mr-2" />
             Configurações

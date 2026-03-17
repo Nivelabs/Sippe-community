@@ -59,11 +59,11 @@ export async function createPostAction(
     revalidatePath(`/c/${communitySlug}`);
 
     return { success: true, data: { postId: post.id } };
-  } catch (error: any) {
+  } catch (error) {
     console.error('Error creating post:', error);
     return {
       success: false,
-      error: error.message || 'Erro ao criar post',
+      error: error instanceof Error ? error.message : 'Erro ao criar post',
     };
   }
 }
@@ -95,7 +95,7 @@ export async function updatePostAction(
     }
 
     // Parse and validate data
-    const rawData: any = {};
+    const rawData: Record<string, unknown> = {};
     if (formData.get('content')) rawData.content = formData.get('content');
     if (formData.get('image_url') !== undefined) rawData.image_url = formData.get('image_url');
 
@@ -108,11 +108,11 @@ export async function updatePostAction(
     revalidatePath(`/c/${communitySlug}`);
 
     return { success: true };
-  } catch (error: any) {
+  } catch (error) {
     console.error('Error updating post:', error);
     return {
       success: false,
-      error: error.message || 'Erro ao atualizar post',
+      error: error instanceof Error ? error.message : 'Erro ao atualizar post',
     };
   }
 }
@@ -158,11 +158,11 @@ export async function deletePostAction(
     revalidatePath(`/c/${communitySlug}`);
 
     return { success: true };
-  } catch (error: any) {
+  } catch (error) {
     console.error('Error deleting post:', error);
     return {
       success: false,
-      error: error.message || 'Erro ao deletar post',
+      error: error instanceof Error ? error.message : 'Erro ao deletar post',
     };
   }
 }
@@ -198,11 +198,11 @@ export async function toggleLikeAction(
     revalidatePath(`/c/${communitySlug}`);
 
     return { success: true };
-  } catch (error: any) {
+  } catch (error) {
     console.error('Error toggling like:', error);
     return {
       success: false,
-      error: error.message || 'Erro ao curtir post',
+      error: error instanceof Error ? error.message : 'Erro ao curtir post',
     };
   }
 }
@@ -242,11 +242,11 @@ export async function createCommentAction(
     revalidatePath(`/c/${communitySlug}`);
 
     return { success: true, data: { commentId: comment.id } };
-  } catch (error: any) {
+  } catch (error) {
     console.error('Error creating comment:', error);
     return {
       success: false,
-      error: error.message || 'Erro ao comentar',
+      error: error instanceof Error ? error.message : 'Erro ao comentar',
     };
   }
 }
@@ -277,11 +277,11 @@ export async function deleteCommentAction(
     revalidatePath(`/c/${communitySlug}`);
 
     return { success: true };
-  } catch (error: any) {
+  } catch (error) {
     console.error('Error deleting comment:', error);
     return {
       success: false,
-      error: error.message || 'Erro ao deletar comentário',
+      error: error instanceof Error ? error.message : 'Erro ao deletar comentário',
     };
   }
 }
@@ -319,11 +319,11 @@ export async function togglePinPostAction(
     revalidatePath(`/c/${communitySlug}`);
 
     return { success: true };
-  } catch (error: any) {
+  } catch (error) {
     console.error('Error toggling pin:', error);
     return {
       success: false,
-      error: error.message || 'Erro ao fixar post',
+      error: error instanceof Error ? error.message : 'Erro ao fixar post',
     };
   }
 }

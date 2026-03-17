@@ -59,11 +59,11 @@ export async function createCommunityAction(
     revalidatePath('/');
 
     return { success: true, data: { slug: community.slug } };
-  } catch (error: any) {
+  } catch (error) {
     console.error('Error creating community:', error);
     return {
       success: false,
-      error: error.message || 'Erro ao criar comunidade',
+      error: error instanceof Error ? error.message : 'Erro ao criar comunidade',
     };
   }
 }
@@ -94,7 +94,7 @@ export async function updateCommunityAction(
     }
 
     // Parse and validate data
-    const rawData: any = {};
+    const rawData: Record<string, unknown> = {};
     if (formData.get('name')) rawData.name = formData.get('name');
     if (formData.get('description')) rawData.description = formData.get('description');
     if (formData.get('category')) rawData.category = formData.get('category');
@@ -112,11 +112,11 @@ export async function updateCommunityAction(
     revalidatePath('/discover');
 
     return { success: true };
-  } catch (error: any) {
+  } catch (error) {
     console.error('Error updating community:', error);
     return {
       success: false,
-      error: error.message || 'Erro ao atualizar comunidade',
+      error: error instanceof Error ? error.message : 'Erro ao atualizar comunidade',
     };
   }
 }
@@ -153,11 +153,11 @@ export async function joinCommunityAction(communityId: string): Promise<ActionRe
     }
 
     return { success: true };
-  } catch (error: any) {
+  } catch (error) {
     console.error('Error joining community:', error);
     return {
       success: false,
-      error: error.message || 'Erro ao entrar na comunidade',
+      error: error instanceof Error ? error.message : 'Erro ao entrar na comunidade',
     };
   }
 }
@@ -199,11 +199,11 @@ export async function leaveCommunityAction(communityId: string): Promise<ActionR
     }
 
     return { success: true };
-  } catch (error: any) {
+  } catch (error) {
     console.error('Error leaving community:', error);
     return {
       success: false,
-      error: error.message || 'Erro ao sair da comunidade',
+      error: error instanceof Error ? error.message : 'Erro ao sair da comunidade',
     };
   }
 }
@@ -239,11 +239,11 @@ export async function deleteCommunityAction(communityId: string): Promise<Action
 
     // Redirect to discover page
     redirect('/discover');
-  } catch (error: any) {
+  } catch (error) {
     console.error('Error deleting community:', error);
     return {
       success: false,
-      error: error.message || 'Erro ao deletar comunidade',
+      error: error instanceof Error ? error.message : 'Erro ao deletar comunidade',
     };
   }
 }

@@ -40,11 +40,11 @@ export async function signUpAction(formData: FormData): Promise<ActionResponse> 
 
     revalidatePath('/', 'layout');
     return { success: true };
-  } catch (error: any) {
+  } catch (error) {
     console.error('Error signing up:', error);
     return {
       success: false,
-      error: error.message || 'Erro ao criar conta',
+      error: error instanceof Error ? error.message : 'Erro ao criar conta',
     };
   }
 }
@@ -74,11 +74,11 @@ export async function signInAction(formData: FormData): Promise<ActionResponse> 
 
     revalidatePath('/', 'layout');
     redirect('/discover');
-  } catch (error: any) {
+  } catch (error) {
     console.error('Error signing in:', error);
     return {
       success: false,
-      error: error.message || 'Erro ao fazer login',
+      error: error instanceof Error ? error.message : 'Erro ao fazer login',
     };
   }
 }
@@ -98,11 +98,11 @@ export async function signOutAction(): Promise<ActionResponse> {
 
     revalidatePath('/', 'layout');
     redirect('/');
-  } catch (error: any) {
+  } catch (error) {
     console.error('Error signing out:', error);
     return {
       success: false,
-      error: error.message || 'Erro ao sair',
+      error: error instanceof Error ? error.message : 'Erro ao sair',
     };
   }
 }
@@ -128,11 +128,11 @@ export async function signInWithOAuthAction(provider: 'google' | 'github') {
     if (data.url) {
       redirect(data.url);
     }
-  } catch (error: any) {
+  } catch (error) {
     console.error('Error signing in with OAuth:', error);
     return {
       success: false,
-      error: error.message || 'Erro ao fazer login',
+      error: error instanceof Error ? error.message : 'Erro ao fazer login',
     };
   }
 }
