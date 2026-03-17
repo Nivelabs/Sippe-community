@@ -1,9 +1,8 @@
 import Link from "next/link";
-import { Zap } from "lucide-react";
 
 const footerLinks = {
   Produto: [
-    { label: "Explorar comunidades", href: "/discover" },
+    { label: "Explorar", href: "/discover" },
     { label: "Recursos", href: "/#features" },
     { label: "Preços", href: "/#pricing" },
     { label: "Changelog", href: "#" },
@@ -18,7 +17,6 @@ const footerLinks = {
     { label: "Central de ajuda", href: "#" },
     { label: "Documentação", href: "#" },
     { label: "Status", href: "#" },
-    { label: "Comunidade", href: "#" },
   ],
   Legal: [
     { label: "Privacidade", href: "#" },
@@ -27,25 +25,51 @@ const footerLinks = {
   ],
 };
 
+/** Compact logo for footer */
+function FooterLogo() {
+  return (
+    <div
+      className="flex items-baseline gap-0 select-none"
+      style={{
+        fontFamily: "var(--font-space-grotesk)",
+        fontWeight: 700,
+        fontSize: "1.125rem",
+        letterSpacing: "-0.03em",
+        color: "#111111",
+      }}
+    >
+      <span>S</span>
+      <span className="relative inline-block">
+        <svg
+          className="absolute left-1/2 -translate-x-1/2"
+          style={{ bottom: "100%", marginBottom: "1px", width: "14px", height: "10px" }}
+          viewBox="0 0 14 10"
+          fill="none"
+        >
+          <rect width="14" height="7.5" rx="3" fill="#111111" />
+          <path d="M4.5 7.5L7 10L9.5 7.5H4.5Z" fill="#111111" />
+          <circle cx="3.5" cy="3.75" r="1" fill="white" />
+          <circle cx="7" cy="3.75" r="1" fill="white" />
+          <circle cx="10.5" cy="3.75" r="1" fill="white" />
+        </svg>
+        i
+      </span>
+      <span>ppe</span>
+    </div>
+  );
+}
+
 export default function Footer() {
   return (
-    <footer className="bg-muted border-t border-border">
-      <div className="container-narrow py-16">
+    <footer className="bg-white border-t border-[#E5E5E5]">
+      <div className="container-narrow py-14">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 lg:gap-12">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-[#09090b] flex items-center justify-center">
-                <Zap className="w-4 h-4 text-white" strokeWidth={2.5} />
-              </div>
-              <span
-                className="text-xl font-extrabold"
-                style={{ fontFamily: "var(--font-jakarta)", color: "var(--heading)" }}
-              >
-                sippe
-              </span>
+            <Link href="/" className="inline-block mb-4">
+              <FooterLogo />
             </Link>
-            <p className="text-sm text-muted-foreground leading-relaxed max-w-[200px]">
+            <p className="text-xs text-[#999] leading-relaxed max-w-[180px]">
               A plataforma para criadores que querem crescer.
             </p>
           </div>
@@ -53,13 +77,18 @@ export default function Footer() {
           {/* Links */}
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
-              <h4 className="text-sm font-semibold text-foreground mb-4">{category}</h4>
-              <ul className="space-y-3">
+              <h4
+                className="text-xs font-semibold text-[#111] mb-4"
+                style={{ fontFamily: "var(--font-space-grotesk)" }}
+              >
+                {category}
+              </h4>
+              <ul className="space-y-2.5">
                 {links.map((link) => (
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                      className="text-xs text-[#999] hover:text-[#111] transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -70,11 +99,11 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="border-t border-border mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground">
+        <div className="border-t border-[#E5E5E5] mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-xs text-[#BBBBBB]">
             © 2025 Sippe. Todos os direitos reservados.
           </p>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-xs text-[#BBBBBB]">
             Feito com 💚 no Brasil
           </p>
         </div>

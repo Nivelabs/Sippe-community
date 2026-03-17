@@ -9,68 +9,63 @@ import { motion } from "framer-motion";
 
 export default function CommunitiesShowcase() {
   return (
-    <section className="section-padding bg-white relative overflow-hidden">
-      {/* Decorative background shape */}
-      <div className="absolute top-0 right-0 w-1/3 h-[500px] bg-secondary/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
-      
-      <div className="container-narrow relative z-10">
+    <section className="section-padding bg-white border-t border-[#E5E5E5]">
+      <div className="container-narrow">
         {/* Header */}
-        <motion.div 
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6, type: "spring", bounce: 0.3 }}
-          className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-10"
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.5 }}
+          className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 mb-10"
         >
           <div>
-            <span className="inline-block px-4 py-1.5 rounded-full bg-secondary text-[#09090b] text-sm font-semibold mb-3">
+            <p className="text-xs font-semibold text-[#999] uppercase tracking-widest mb-3">
               Comunidades em destaque
-            </span>
+            </p>
             <h2
-              className="text-3xl lg:text-4xl font-extrabold text-heading"
-              style={{ fontFamily: "var(--font-jakarta)" }}
+              className="text-[clamp(28px,4vw,44px)] font-bold text-[#111] leading-[1.0]"
+              style={{ fontFamily: "var(--font-space-grotesk)", letterSpacing: "-0.03em" }}
             >
-              Descubra onde os criadores crescem
+              Descubra onde os
+              <br />
+              criadores crescem
             </h2>
           </div>
           <Link href="/discover">
             <Button
               variant="outline"
-              className="rounded-full font-semibold shrink-0 gap-2 hover:bg-secondary transition-colors"
+              className="rounded-full font-medium text-sm gap-2 border-[#E0E0E0] text-[#737373] hover:text-[#111] hover:border-[#111] hover:bg-transparent transition-all shrink-0"
             >
               Ver todas
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-3.5 h-3.5" />
             </Button>
           </Link>
         </motion.div>
 
-        {/* Community Grid */}
-        <motion.div 
+        {/* Grid */}
+        <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
+          viewport={{ once: true, margin: "-60px" }}
           variants={{
             hidden: {},
-            visible: {
-              transition: {
-                staggerChildren: 0.1,
-              },
-            },
+            visible: { transition: { staggerChildren: 0.07 } },
           }}
-          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"
         >
           {COMMUNITIES.slice(0, 6).map((community) => (
             <motion.div
               key={community.id}
               variants={{
-                hidden: { opacity: 0, y: 30, scale: 0.95 },
-                visible: { 
-                  opacity: 1, 
-                  y: 0, 
-                  scale: 1,
-                  transition: { type: "spring", stiffness: 100, damping: 15 }
+                hidden: { opacity: 0, y: 20 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { type: "spring", stiffness: 80, damping: 16 },
                 },
               }}
+              whileHover={{ y: -4, transition: { duration: 0.15 } }}
             >
               <CommunityCard community={community} />
             </motion.div>

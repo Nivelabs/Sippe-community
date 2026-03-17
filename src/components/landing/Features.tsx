@@ -1,6 +1,6 @@
 "use client";
 
-import { Users, BookOpen, Calendar, Trophy, CreditCard, BarChart2 } from "lucide-react";
+import { Users, BookOpen, Calendar, Trophy, CreditCard, BarChart2, ArrowRight } from "lucide-react";
 import { FEATURES } from "@/lib/mock-data";
 import { motion } from "framer-motion";
 
@@ -15,56 +15,62 @@ const ICON_MAP: Record<string, React.ElementType> = {
 
 export default function Features() {
   return (
-    <section id="features" className="section-padding bg-muted">
+    <section id="features" className="section-padding bg-[#F7F7F7] border-t border-[#E5E5E5]">
       <div className="container-narrow">
+
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-14"
+          className="mb-14"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-secondary text-[#09090b] text-sm font-semibold mb-4">
-            Tudo que você precisa
-          </span>
-          <h2
-            className="text-4xl lg:text-5xl font-extrabold text-heading mb-4"
-            style={{ fontFamily: "var(--font-jakarta)" }}
-          >
-            Uma plataforma,{" "}
-            <span className="text-[#09090b]">infinitas possibilidades</span>
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Do feed de comunidade até cursos online, eventos e gamificação — tudo
-            integrado e funcionando junto para você crescer mais rápido.
+          <p className="text-xs font-semibold text-[#999] uppercase tracking-widest mb-4">
+            Recursos
           </p>
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+            <h2
+              className="text-[clamp(32px,4vw,52px)] font-bold text-[#111] leading-[1.0]"
+              style={{ fontFamily: "var(--font-space-grotesk)", letterSpacing: "-0.03em" }}
+            >
+              Uma plataforma,
+              <br />
+              infinitas possibilidades
+            </h2>
+            <p className="text-base text-[#666] max-w-xs leading-relaxed">
+              Do feed de comunidade até cursos, eventos e gamificação — tudo integrado.
+            </p>
+          </div>
         </motion.div>
 
-        {/* Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Bento grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {FEATURES.map((feature, index) => {
             const Icon = ICON_MAP[feature.icon];
+            const isFeatured = index === 0 || index === 4;
             return (
               <motion.div
                 key={feature.title}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
-                className="bg-white rounded-2xl p-6 border border-border hover:border-[#09090b]/30 hover:shadow-xl transition-all duration-300 group"
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.4, delay: index * 0.06 }}
+                whileHover={{ y: -3, transition: { duration: 0.15 } }}
+                className={`bg-white rounded-2xl p-6 border border-[#E5E5E5] hover:border-[#CCCCCC] hover:shadow-lg transition-all duration-200 group ${
+                  isFeatured ? "lg:col-span-1" : ""
+                }`}
               >
-                <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center mb-4 group-hover:bg-[#09090b]/10 transition-colors">
-                  <Icon className="w-6 h-6 text-[#09090b]" />
+                <div className="w-10 h-10 rounded-xl bg-[#F2F2F2] group-hover:bg-[#EBEBEB] flex items-center justify-center mb-5 transition-colors">
+                  <Icon className="w-5 h-5 text-[#111]" />
                 </div>
                 <h3
-                  className="text-lg font-bold text-foreground mb-2"
-                  style={{ fontFamily: "var(--font-jakarta)" }}
+                  className="text-sm font-semibold text-[#111] mb-2"
+                  style={{ fontFamily: "var(--font-space-grotesk)" }}
                 >
                   {feature.title}
                 </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
+                <p className="text-xs text-[#737373] leading-relaxed">
                   {feature.description}
                 </p>
               </motion.div>
@@ -72,35 +78,32 @@ export default function Features() {
           })}
         </div>
 
-        {/* Bottom banner */}
+        {/* Bottom CTA strip */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, type: "spring" }}
-          className="mt-12 rounded-3xl bg-gradient-to-br from-[#09090b] to-[#27272a] p-8 lg:p-12 text-white flex flex-col lg:flex-row items-center justify-between gap-6 relative overflow-hidden"
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 bg-white rounded-2xl border border-[#E5E5E5] p-6"
         >
-          <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
-
-          <div className="relative z-10">
-            <h3
-              className="text-2xl lg:text-3xl font-extrabold mb-2"
-              style={{ fontFamily: "var(--font-jakarta)" }}
+          <div>
+            <p
+              className="text-base font-semibold text-[#111]"
+              style={{ fontFamily: "var(--font-space-grotesk)" }}
             >
-              Comece a construir hoje mesmo
-            </h3>
-            <p className="text-white/80 text-base">
-              Crie sua comunidade gratuita em menos de 5 minutos. Sem cartão de crédito.
+              Pronto para começar?
+            </p>
+            <p className="text-sm text-[#737373] mt-0.5">
+              Crie sua comunidade em menos de 5 minutos. Sem cartão de crédito.
             </p>
           </div>
-          <motion.a
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+          <a
             href="/signup"
-            className="relative z-10 shrink-0 inline-flex items-center gap-2 bg-white text-[#09090b] font-bold px-8 py-3.5 rounded-full hover:bg-green-50 transition-colors text-base shadow-xl"
+            className="shrink-0 inline-flex items-center gap-2 bg-[#111] text-white text-sm font-semibold px-6 py-2.5 rounded-full hover:bg-black transition-colors group"
           >
-            Criar comunidade grátis
-          </motion.a>
+            Criar comunidade
+            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+          </a>
         </motion.div>
       </div>
     </section>

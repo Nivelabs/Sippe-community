@@ -7,108 +7,86 @@ import { motion } from "framer-motion";
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="section-padding bg-muted relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-white to-transparent pointer-events-none" />
-      
-      <div className="container-narrow relative z-10">
+    <section id="pricing" className="section-padding bg-white border-t border-[#E5E5E5]">
+      <div className="container-narrow">
+
         {/* Header */}
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.5 }}
           className="text-center mb-14"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-secondary text-[#09090b] text-sm font-semibold mb-4">
+          <p className="text-xs font-semibold text-[#999] uppercase tracking-widest mb-4">
             Preços
-          </span>
+          </p>
           <h2
-            className="text-4xl lg:text-5xl font-extrabold text-heading mb-4"
-            style={{ fontFamily: "var(--font-jakarta)" }}
+            className="text-[clamp(28px,4vw,52px)] font-bold text-[#111] leading-[1.0]"
+            style={{ fontFamily: "var(--font-space-grotesk)", letterSpacing: "-0.03em" }}
           >
-            Comece de graça,{" "}
-            <span className="text-[#09090b]">cresça sem limites</span>
+            Comece de graça,
+            <br />
+            <span className="text-[#737373]">cresça sem limites</span>
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-[#737373] text-base mt-4">
             Sem taxas surpresa. Cancele quando quiser.
           </p>
         </motion.div>
 
         {/* Plans */}
-        <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto">
           {PRICING_PLANS.map((plan, index) => (
             <motion.div
               key={plan.id}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ 
-                duration: 0.5, 
-                delay: index * 0.15,
-                type: "spring",
-                stiffness: 100
-              }}
-              whileHover={{ y: -8, transition: { duration: 0.2 } }}
-              className={`relative rounded-3xl p-6 flex flex-col transition-shadow duration-300 ${
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+              className={`relative rounded-2xl p-6 flex flex-col border transition-all duration-200 ${
                 plan.featured
-                  ? "bg-[#09090b] text-white shadow-2xl shadow-primary/40 scale-105 z-10"
-                  : "bg-white border border-border hover:shadow-xl"
+                  ? "bg-[#111] border-transparent text-white shadow-2xl shadow-black/15 scale-[1.03] z-10"
+                  : "bg-white border-[#E5E5E5] hover:border-[#CCCCCC] hover:shadow-md"
               }`}
             >
               {plan.featured && (
-                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                  <motion.span 
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ delay: 0.6, type: "spring", bounce: 0.5 }}
-                    className="inline-block px-4 py-1 rounded-full bg-white text-[#09090b] text-xs font-bold shadow-md"
-                  >
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                  <span className="inline-block px-3.5 py-1 rounded-full bg-white text-[#111] text-[10px] font-bold shadow-sm border border-[#E5E5E5]">
                     Mais popular ⚡
-                  </motion.span>
+                  </span>
                 </div>
               )}
 
-              {/* Decorative background glow for featured plan */}
-              {plan.featured && (
-                <div className="absolute inset-0 bg-white/5 rounded-3xl -z-10 blur-xl" />
-              )}
-
-              <div className="mb-6 relative z-10">
+              <div className="mb-6">
                 <h3
-                  className={`text-lg font-bold mb-1 ${plan.featured ? "text-white" : "text-foreground"}`}
-                  style={{ fontFamily: "var(--font-jakarta)" }}
+                  className={`text-sm font-semibold mb-1 ${plan.featured ? "text-white" : "text-[#111]"}`}
+                  style={{ fontFamily: "var(--font-space-grotesk)" }}
                 >
                   {plan.name}
                 </h3>
-                <p
-                  className={`text-sm mb-4 ${plan.featured ? "text-white/80" : "text-muted-foreground"}`}
-                >
+                <p className={`text-xs mb-5 ${plan.featured ? "text-white/60" : "text-[#999]"}`}>
                   {plan.description}
                 </p>
                 <div className="flex items-baseline gap-1">
                   {plan.price === 0 ? (
                     <span
-                      className={`text-4xl font-extrabold ${plan.featured ? "text-white" : "text-foreground"}`}
-                      style={{ fontFamily: "var(--font-jakarta)" }}
+                      className={`text-3xl font-bold ${plan.featured ? "text-white" : "text-[#111]"}`}
+                      style={{ fontFamily: "var(--font-space-grotesk)", letterSpacing: "-0.03em" }}
                     >
                       Grátis
                     </span>
                   ) : (
                     <>
-                      <span
-                        className={`text-sm font-medium ${plan.featured ? "text-white/80" : "text-muted-foreground"}`}
-                      >
+                      <span className={`text-xs ${plan.featured ? "text-white/60" : "text-[#999]"}`}>
                         R$
                       </span>
                       <span
-                        className={`text-4xl font-extrabold ${plan.featured ? "text-white" : "text-foreground"}`}
-                        style={{ fontFamily: "var(--font-jakarta)" }}
+                        className={`text-3xl font-bold ${plan.featured ? "text-white" : "text-[#111]"}`}
+                        style={{ fontFamily: "var(--font-space-grotesk)", letterSpacing: "-0.03em" }}
                       >
                         {plan.price}
                       </span>
-                      <span
-                        className={`text-sm ${plan.featured ? "text-white/80" : "text-muted-foreground"}`}
-                      >
+                      <span className={`text-xs ${plan.featured ? "text-white/60" : "text-[#999]"}`}>
                         /mês
                       </span>
                     </>
@@ -116,48 +94,37 @@ export default function Pricing() {
                 </div>
               </div>
 
-              {/* Features */}
-              <ul className="space-y-3 mb-8 flex-1 relative z-10">
-                {plan.features.map((feature, i) => (
-                  <motion.li 
-                    key={feature}
-                    custom={i}
-                    initial={{ opacity: 0, x: -10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.3 + (index * 0.1) + (i * 0.05) }}
-                    className="flex items-start gap-2.5"
-                  >
+              {/* Features list */}
+              <ul className="space-y-2.5 mb-7 flex-1">
+                {plan.features.map((feature) => (
+                  <li key={feature} className="flex items-start gap-2">
                     <div
-                      className={`w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5 ${
-                        plan.featured ? "bg-white/20" : "bg-secondary"
+                      className={`w-4 h-4 rounded-full flex items-center justify-center shrink-0 mt-0.5 ${
+                        plan.featured ? "bg-white/20" : "bg-[#F2F2F2]"
                       }`}
                     >
                       <Check
-                        className={`w-3 h-3 ${plan.featured ? "text-white" : "text-[#09090b]"}`}
-                        strokeWidth={2.5}
+                        className={`w-2.5 h-2.5 ${plan.featured ? "text-white" : "text-[#555]"}`}
+                        strokeWidth={3}
                       />
                     </div>
-                    <span
-                      className={`text-sm ${plan.featured ? "text-white/90" : "text-foreground"}`}
-                    >
+                    <span className={`text-xs ${plan.featured ? "text-white/80" : "text-[#555]"}`}>
                       {feature}
                     </span>
-                  </motion.li>
+                  </li>
                 ))}
               </ul>
 
-              <Link href={plan.id === "enterprise" ? "#" : "/signup"} className="relative z-10 mt-auto">
-                <motion.button
-                  whileTap={{ scale: 0.95 }}
-                  className={`w-full py-3 px-6 rounded-full font-bold text-sm transition-colors ${
+              <Link href={plan.id === "enterprise" ? "#" : "/signup"} className="mt-auto">
+                <button
+                  className={`w-full py-2.5 px-5 rounded-full font-semibold text-xs transition-colors ${
                     plan.featured
-                      ? "bg-white text-[#09090b] hover:bg-green-50 shadow-md"
-                      : "bg-[#09090b] text-white hover:bg-brand-dark shadow-sm"
+                      ? "bg-white text-[#111] hover:bg-[#F2F2F2]"
+                      : "bg-[#111] text-white hover:bg-black"
                   }`}
                 >
                   {plan.cta}
-                </motion.button>
+                </button>
               </Link>
             </motion.div>
           ))}
